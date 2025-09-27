@@ -1,2 +1,2 @@
 # project
-This is Computer and Applied Computer Science Department Under Faculty Of Science In Egerton
+This is Applied Computer Science under the Computer Science Department of the Faculty Of Science In Egerton
