@@ -244,7 +244,7 @@
         =========================== */
         .hero {
             background: linear-gradient(rgba(0, 39, 77, 0.85), rgba(0, 64, 128, 0.85)), 
-                        url('#') center/cover no-repeat;
+                        url('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
             color: white;
             text-align: center;
             padding: var(--space-xl) 0;
@@ -295,7 +295,7 @@
         .btn-outline {
             background: transparent;
             border: 2px solid var(--accent-gold);
-            color: white;
+            color: var(--accent-gold);
         }
 
         .btn-outline:hover {
@@ -324,7 +324,6 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            background: linear-gradient(45deg, var(--secondary-blue), var(--primary-blue));
         }
 
         .card-content {
@@ -370,7 +369,6 @@
             object-fit: cover;
             border: 4px solid var(--accent-gold);
             margin: 0 auto var(--space-sm);
-            background: linear-gradient(45deg, var(--secondary-blue), var(--primary-blue));
         }
 
         .staff-name {
@@ -416,7 +414,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 39, 77, 0.9);
+            background: rgba(0, 39, 77, 0.8);
             color: white;
             padding: var(--space-md);
             transform: translateY(100%);
@@ -441,7 +439,6 @@
         .research-area:hover {
             background: white;
             transform: translateX(5px);
-            box-shadow: var(--shadow-sm);
         }
 
         /* ===========================
@@ -570,48 +567,6 @@
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
-        }
-
-        /* ===========================
-           ENHANCED CSS FEATURES
-        =========================== */
-        .text-highlight {
-            background: linear-gradient(120deg, transparent 0%, transparent 50%, var(--accent-gold) 50%);
-            background-size: 220% 100%;
-            background-position: 100% 0;
-            transition: all 0.5s ease;
-            padding: 2px 4px;
-        }
-
-        .text-highlight:hover {
-            background-position: 0 0;
-            color: var(--primary-blue);
-        }
-
-        .floating-card {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .gradient-text {
-            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         /* ===========================
@@ -792,31 +747,13 @@
                     <div class="fade-in">
                         <p>The Department of Computer and Applied Computer Science at Egerton University is a center of excellence in computing education, research, and innovation. Our programs are designed to equip students with the knowledge and skills needed to excel in the rapidly evolving field of computer science.</p>
                         <p>With state-of-the-art facilities, experienced faculty, and strong industry partnerships, we provide an environment that fosters academic excellence and professional growth.</p>
-                        
-                        <div class="stats" style="margin-top: var(--space-lg);">
-                            <div class="grid grid-3">
-                                <div class="stat-item text-center">
-                                    <div class="stat-number">500+</div>
-                                    <p>Students</p>
-                                </div>
-                                <div class="stat-item text-center">
-                                    <div class="stat-number">25+</div>
-                                    <p>Faculty Members</p>
-                                </div>
-                                <div class="stat-item text-center">
-                                    <div class="stat-number">30</div>
-                                    <p>Years of Excellence</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="fade-in">
-                        <div class="card floating-card">
-                            <div class="card-img"></div>
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Students collaborating" class="card-img">
                             <div class="card-content">
                                 <h3 class="card-title">Our Commitment</h3>
                                 <p>We are dedicated to providing quality education that combines theoretical knowledge with practical applications, preparing students for successful careers in technology.</p>
-                                <p class="text-highlight">Join our community of innovators and problem-solvers!</p>
                             </div>
                         </div>
                     </div>
@@ -851,7 +788,7 @@
                 </div>
                 <div class="fade-in">
                     <div class="card">
-                        <div class="card-img"></div>
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Department Building" class="card-img">
                         <div class="card-content">
                             <h3 class="card-title">Message from the Head of Department</h3>
                             <p>"Welcome to the Department of Computer and Applied Computer Science. We are committed to equipping students with practical skills, research experience, and the knowledge necessary to thrive in the digital economy. Our faculty members are dedicated to providing a stimulating learning environment that fosters innovation and critical thinking."</p>
@@ -871,9 +808,9 @@
                 <div class="card fade-in">
                     <div class="card-content">
                         <h3 class="card-title">BSc Computer Science</h3>
-                        <p style="color: var(--light-gray);">A comprehensive four-year program covering programming, algorithms, software engineering, networking, databases, and artificial intelligence. Students engage in hands-on labs, industry attachments, and a final year project to apply their knowledge.</p>
-                        <h4 style="color: var(--accent-gold);">Career Opportunities</h4>
-                        <ul style="color: var(--light-gray);">
+                        <p>A comprehensive four-year program covering programming, algorithms, software engineering, networking, databases, and artificial intelligence. Students engage in hands-on labs, industry attachments, and a final year project to apply their knowledge.</p>
+                        <h4>Career Opportunities</h4>
+                        <ul>
                             <li>Software Developer</li>
                             <li>Systems Analyst</li>
                             <li>Database Administrator</li>
@@ -885,9 +822,9 @@
                 <div class="card fade-in">
                     <div class="card-content">
                         <h3 class="card-title">BSc Applied Computer Science</h3>
-                        <p style="color: var(--light-gray);">Focuses on the application of computing in real-world settings, integrating programming, database systems, information management, and applied technologies to solve societal and industrial challenges.</p>
-                        <h4 style="color: var(--accent-gold);">Career Opportunities</h4>
-                        <ul style="color: var(--light-gray);">
+                        <p>Focuses on the application of computing in real-world settings, integrating programming, database systems, information management, and applied technologies to solve societal and industrial challenges.</p>
+                        <h4>Career Opportunities</h4>
+                        <ul>
                             <li>IT Consultant</li>
                             <li>Applications Developer</li>
                             <li>Business Analyst</li>
@@ -899,9 +836,9 @@
                 <div class="card fade-in">
                     <div class="card-content">
                         <h3 class="card-title">MSc Programs</h3>
-                        <p style="color: var(--light-gray);">Advanced training in computer science with research opportunities in AI, cybersecurity, data science, and software engineering. Focused on applied research and practical implementation of computing solutions across industries.</p>
-                        <h4 style="color: var(--accent-gold);">Specializations</h4>
-                        <ul style="color: var(--light-gray);">
+                        <p>Advanced training in computer science with research opportunities in AI, cybersecurity, data science, and software engineering. Focused on applied research and practical implementation of computing solutions across industries.</p>
+                        <h4>Specializations</h4>
+                        <ul>
                             <li>Artificial Intelligence</li>
                             <li>Data Science</li>
                             <li>Cybersecurity</li>
@@ -922,7 +859,7 @@
             <h3>Head of Department</h3>
             <div class="grid grid-2 fade-in">
                 <div class="staff-card card">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Dr. Zachary O. Bosire" class="staff-img">
                     <h3 class="staff-name">Dr. Zachary O. Bosire</h3>
                     <p class="staff-role">Head of Department</p>
                     <p>Provides academic leadership and strategic direction for the department. His research focuses on advancing computer science education and research that addresses both local and global challenges.</p>
@@ -938,7 +875,7 @@
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-building"></i>
-                                <span>Room 201, Science Building</span>
+                                <span>Room One ,Faculty Of Science Building</span>
                             </div>
                         </div>
                     </div>
@@ -948,7 +885,7 @@
             <h3>Academic Staff</h3>
             <div class="grid grid-3">
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Dr. Phoebe N. Ongalo" class="staff-img">
                     <h3 class="staff-name">Dr. Phoebe N. Ongalo</h3>
                     <p class="staff-role">Senior Lecturer – Software Engineering</p>
                     <p>Specializes in software engineering, system architecture, and agile development methodologies.</p>
@@ -967,7 +904,7 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Dr. George Y. Odongo" class="staff-img">
                     <h3 class="staff-name">Dr. George Y. Odongo</h3>
                     <p class="staff-role">Lecturer – Data Science & Analytics</p>
                     <p>Expert in data science, machine learning, and business analytics with extensive industry experience.</p>
@@ -986,7 +923,7 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Dr. Peter K. Kemoi" class="staff-img">
                     <h3 class="staff-name">Dr. Peter K. Kemoi</h3>
                     <p class="staff-role">Lecturer – Networks & Cybersecurity</p>
                     <p>Focuses on computer networks, cybersecurity, and distributed systems with several publications in international journals.</p>
@@ -1005,7 +942,7 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Mr. Charles N. Njoroge" class="staff-img">
                     <h3 class="staff-name">Mr. Charles N. Njoroge</h3>
                     <p class="staff-role">Lecturer – Web Systems</p>
                     <p>Specializes in web development, user experience design, and front-end technologies.</p>
@@ -1024,7 +961,7 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Ms. Noela C. Kipiyegen" class="staff-img">
                     <h3 class="staff-name">Ms. Noela C. Kipiyegen</h3>
                     <p class="staff-role">Lecturer – Databases & Information Systems</p>
                     <p>Expert in database management systems, information retrieval, and data modeling.</p>
@@ -1041,12 +978,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <h3>Technical and Support Staff</h3>
-            <div class="grid grid-3">
+                
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Mr. Leonard K. Rop" class="staff-img">
                     <h3 class="staff-name">Mr. Leonard K. Rop</h3>
                     <p class="staff-role">Senior Technologist</p>
                     <p>Manages computer laboratories and provides technical support for departmental activities.</p>
@@ -1059,44 +993,6 @@
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
                                 <span>+254 722 789 012</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
-                    <h3 class="staff-name">Mr. Joseph K. Mbugua</h3>
-                    <p class="staff-role">Technician</p>
-                    <p>Provides technical assistance and maintenance for departmental equipment and facilities.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>j.mbugua@egerton.ac.ke</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 722 890 123</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
-                    <h3 class="staff-name">Ms. Rachel W. Maina</h3>
-                    <p class="staff-role">Secretary</p>
-                    <p>Provides administrative support and coordinates departmental activities and communications.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>r.maina@egerton.ac.ke</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 722 901 234</span>
                             </div>
                         </div>
                     </div>
@@ -1129,7 +1025,7 @@
                 </div>
                 <div class="fade-in">
                     <div class="card">
-                        <div class="card-img"></div>
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Research Lab" class="card-img">
                         <div class="card-content">
                             <h3 class="card-title">Research Collaborations</h3>
                             <p>We partner with industry leaders and international institutions to advance cutting-edge research in computing technologies.</p>
@@ -1153,21 +1049,21 @@
             <h2>Our Facilities</h2>
             <div class="grid grid-3">
                 <div class="facility-card card fade-in">
-                    <div class="card-img"></div>
+                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Programming Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Programming Lab</h3>
                         <p>Equipped with modern PCs for C, C++, Java, and Python programming exercises. Features high-speed internet and specialized software for software development.</p>
                     </div>
                 </div>
                 <div class="facility-card card fade-in">
-                    <div class="card-img"></div>
+                    <img src="#" alt="Networking Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Networking Lab</h3>
                         <p>Dedicated for networking simulations, router configuration, and cybersecurity training. Includes Cisco equipment and specialized network analysis tools.</p>
                     </div>
                 </div>
                 <div class="facility-card card fade-in">
-                    <div class="card-img"></div>
+                    <img src="#" alt="Multimedia Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Multimedia Lab</h3>
                         <p>Supports graphic design, web development, and multimedia projects. Equipped with high-end computers and creative software suites.</p>
@@ -1227,7 +1123,7 @@
             
             <div class="grid grid-3">
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Raphael Mwendwa" class="staff-img">
                     <h3 class="staff-name">Raphael Mwendwa</h3>
                     <p class="staff-role">Project Lead & Frontend Developer</p>
                     <p>Responsible for overall website architecture, user interface design, and project coordination.</p>
@@ -1250,7 +1146,7 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Dian Bryner Ochieng" class="staff-img">
                     <h3 class="staff-name">Dian Bryner Ochieng</h3>
                     <p class="staff-role">UI/UX Designer & Frontend Developer</p>
                     <p>Designed the user interface and implemented responsive layouts for optimal user experience across all devices.</p>
@@ -1273,7 +1169,7 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Lily Mae Oduor" class="staff-img">
                     <h3 class="staff-name">Lily Mae Oduor</h3>
                     <p class="staff-role">Content Strategist & Frontend Developer</p>
                     <p>Focused on content organization, information architecture, and ensuring content accessibility across all screen sizes.</p>
@@ -1298,7 +1194,7 @@
             
             <div class="grid grid-3" style="margin-top: var(--space-md);">
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Sylvenus Simiyu" class="staff-img">
                     <h3 class="staff-name">Sylvenus Simiyu</h3>
                     <p class="staff-role">Frontend Developer & Accessibility Specialist</p>
                     <p>Implemented interactive features and ensured the website meets modern accessibility standards.</p>
@@ -1321,7 +1217,7 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Trevor Juma" class="staff-img">
                     <h3 class="staff-name">Trevor Juma</h3>
                     <p class="staff-role">Frontend Developer & Performance Analyst</p>
                     <p>Optimized website performance and implemented responsive design patterns for various screen sizes.</p>
@@ -1344,7 +1240,7 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <div class="staff-img"></div>
+                    <img src="#" alt="Shabati Graphics" class="staff-img">
                     <h3 class="staff-name">Dorcas Muthoni</h3>
                     <p class="staff-role">Visual Designer & Frontend Developer</p>
                     <p>Created visual elements, graphics, and maintained design consistency throughout the website interface.</p>
