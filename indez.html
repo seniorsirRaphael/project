@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Department of Computer Science - Egerton University</title>
+    <title>Department of Computer and Applied Computer Science - Egerton University</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ===========================
@@ -236,6 +236,7 @@
             color: white;
             font-size: 1.5rem;
             cursor: pointer;
+            z-index: 1001;
         }
 
         /* ===========================
@@ -396,6 +397,7 @@
         .contact-item {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: var(--space-xs);
         }
 
@@ -583,17 +585,19 @@
             
             .nav-menu {
                 position: fixed;
-                top: 80px;
+                top: 0;
                 left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
                 background: var(--primary-blue);
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: flex-start;
                 padding-top: var(--space-xl);
                 transition: left 0.3s ease;
                 z-index: 999;
+                box-shadow: var(--shadow-xl);
             }
             
             .nav-menu.active {
@@ -603,6 +607,8 @@
             .nav-link {
                 padding: var(--space-sm) var(--space-lg);
                 font-size: 1.1rem;
+                width: 100%;
+                display: block;
             }
             
             .hero h1 {
@@ -611,6 +617,25 @@
             
             .grid-3, .grid-4 {
                 grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                position: relative;
+            }
+            
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 998;
+            }
+            
+            .overlay.active {
+                display: block;
             }
         }
 
@@ -630,10 +655,43 @@
                 padding: var(--space-sm) var(--space-md);
                 font-size: 0.9rem;
             }
+            
+            .hero {
+                min-height: 60vh;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        /* ===========================
+           MOBILE MENU OVERLAY
+        =========================== */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+        }
+
+        .overlay.active {
+            display: block;
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Menu Overlay -->
+    <div class="overlay" id="overlay"></div>
+
     <!-- Header Section -->
     <header>
         <div class="container">
@@ -644,7 +702,7 @@
                     </div>
                     <div class="logo-text">
                         <h1>Egerton University</h1>
-                        <p>Department of Computer and Applied Computer Science</p>
+                        <p>Department of Computer Science</p>
                     </div>
                 </div>
                 
@@ -801,7 +859,7 @@
             <h3>Head of Department</h3>
             <div class="grid grid-2 fade-in">
                 <div class="staff-card card">
-                    <img src="#" alt="Dr. Zachary O. Bosire" class="staff-img">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Dr. Zachary O. Bosire" class="staff-img">
                     <h3 class="staff-name">Dr. Zachary O. Bosire</h3>
                     <p class="staff-role">Head of Department</p>
                     <p>Provides academic leadership and strategic direction for the department. His research focuses on advancing computer science education and research that addresses both local and global challenges.</p>
@@ -817,7 +875,7 @@
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-building"></i>
-                                <span>Room XXX, Faculty of Science Building</span>
+                                <span>Room 201, Science Building</span>
                             </div>
                         </div>
                     </div>
@@ -827,7 +885,7 @@
             <h3>Academic Staff</h3>
             <div class="grid grid-3">
                 <div class="staff-card card fade-in">
-                    <img src="#" alt="Dr. Phoebe N. Ongalo" class="staff-img">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Dr. Phoebe N. Ongalo" class="staff-img">
                     <h3 class="staff-name">Dr. Phoebe N. Ongalo</h3>
                     <p class="staff-role">Senior Lecturer – Software Engineering</p>
                     <p>Specializes in software engineering, system architecture, and agile development methodologies.</p>
@@ -846,7 +904,7 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <img src="#" alt="Dr. George Y. Odongo" class="staff-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Dr. George Y. Odongo" class="staff-img">
                     <h3 class="staff-name">Dr. George Y. Odongo</h3>
                     <p class="staff-role">Lecturer – Data Science & Analytics</p>
                     <p>Expert in data science, machine learning, and business analytics with extensive industry experience.</p>
@@ -865,7 +923,7 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <img src="#" alt="Dr. Peter K. Kemoi" class="staff-img">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Dr. Peter K. Kemoi" class="staff-img">
                     <h3 class="staff-name">Dr. Peter K. Kemoi</h3>
                     <p class="staff-role">Lecturer – Networks & Cybersecurity</p>
                     <p>Focuses on computer networks, cybersecurity, and distributed systems with several publications in international journals.</p>
@@ -882,10 +940,63 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center" style="margin-top: var(--space-lg);">
-                <a class="btn">View All Staff Members</a>
+                
+                <div class="staff-card card fade-in">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Mr. Charles N. Njoroge" class="staff-img">
+                    <h3 class="staff-name">Mr. Charles N. Njoroge</h3>
+                    <p class="staff-role">Lecturer – Web Systems</p>
+                    <p>Specializes in web development, user experience design, and front-end technologies.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>c.njoroge@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 722 567 890</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card card fade-in">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Ms. Noela C. Kipiyegen" class="staff-img">
+                    <h3 class="staff-name">Ms. Noela C. Kipiyegen</h3>
+                    <p class="staff-role">Lecturer – Databases & Information Systems</p>
+                    <p>Expert in database management systems, information retrieval, and data modeling.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>n.kipiyegen@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 722 678 901</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card card fade-in">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Mr. Leonard K. Rop" class="staff-img">
+                    <h3 class="staff-name">Mr. Leonard K. Rop</h3>
+                    <p class="staff-role">Senior Technologist</p>
+                    <p>Manages computer laboratories and provides technical support for departmental activities.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>l.rop@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 722 789 012</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -938,21 +1049,21 @@
             <h2>Our Facilities</h2>
             <div class="grid grid-3">
                 <div class="facility-card card fade-in">
-                    <img src="#" alt="Programming Lab" class="card-img">
+                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Programming Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Programming Lab</h3>
                         <p>Equipped with modern PCs for C, C++, Java, and Python programming exercises. Features high-speed internet and specialized software for software development.</p>
                     </div>
                 </div>
                 <div class="facility-card card fade-in">
-                    <img src="#" alt="Networking Lab" class="card-img">
+                    <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Networking Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Networking Lab</h3>
                         <p>Dedicated for networking simulations, router configuration, and cybersecurity training. Includes Cisco equipment and specialized network analysis tools.</p>
                     </div>
                 </div>
                 <div class="facility-card card fade-in">
-                    <img src="#" alt="Multimedia Lab" class="card-img">
+                    <img src="https://images.unsplash.com/photo-1568992688065-536aad8a12f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Multimedia Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Multimedia Lab</h3>
                         <p>Supports graphic design, web development, and multimedia projects. Equipped with high-end computers and creative software suites.</p>
@@ -1008,14 +1119,14 @@
     <section id="developers" class="section section-light">
         <div class="container">
             <h2>Website Development Team</h2>
-            <p>This website was developed by a team of talented students from the Department of Computer and Applied Computer Science.</p>
+            <p>This website was developed by a team of talented students from the Department of Computer and Applied Computer Science as part of their frontend development project.</p>
             
             <div class="grid grid-3">
                 <div class="staff-card card fade-in">
-                    <img src="/senior.jpg" alt="Raphael Mwendwa" class="staff-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Raphael Mwendwa" class="staff-img">
                     <h3 class="staff-name">Raphael Mwendwa</h3>
-                    <p class="staff-role">Lead Developer & Project Manager</p>
-                    <p>Responsible for overall website architecture and project coordination.</p>
+                    <p class="staff-role">Project Lead & Frontend Developer</p>
+                    <p>Responsible for overall website architecture, user interface design, and project coordination.</p>
                     <div class="staff-contact">
                         <div class="contact-info">
                             <div class="contact-item">
@@ -1035,10 +1146,10 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <img src="#" alt="Dian Bryner Ochieng" class="staff-img">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Dian Bryner Ochieng" class="staff-img">
                     <h3 class="staff-name">Dian Bryner Ochieng</h3>
-                    <p class="staff-role">Frontend Designer & UI Specialist</p>
-                    <p>Designed the user interface and implemented responsive layouts for optimal user experience.</p>
+                    <p class="staff-role">UI/UX Designer & Frontend Developer</p>
+                    <p>Designed the user interface and implemented responsive layouts for optimal user experience across all devices.</p>
                     <div class="staff-contact">
                         <div class="contact-info">
                             <div class="contact-item">
@@ -1047,21 +1158,21 @@
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
-                                <span>+254 7XX XXX XXX</span>
+                                <span>+254 700 000 001</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fab fa-github"></i>
-                                <span>#</span>
+                                <span>dianochieng</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <img src="#" alt="Lily Mae Oduor" class="staff-img">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Lily Mae Oduor" class="staff-img">
                     <h3 class="staff-name">Lily Mae Oduor</h3>
-                    <p class="staff-role">UX Designer & Content Strategist</p>
-                    <p>Focused on user experience design, content organization, and information architecture.</p>
+                    <p class="staff-role">Content Strategist & Frontend Developer</p>
+                    <p>Focused on content organization, information architecture, and ensuring content accessibility across all screen sizes.</p>
                     <div class="staff-contact">
                         <div class="contact-info">
                             <div class="contact-item">
@@ -1070,7 +1181,7 @@
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
-                                <span>+254 7XX XXX XXX</span>
+                                <span>+254 700 000 002</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fab fa-github"></i>
@@ -1083,10 +1194,10 @@
             
             <div class="grid grid-3" style="margin-top: var(--space-md);">
                 <div class="staff-card card fade-in">
-                    <img src="#" alt="Sylvenus Simiyu" class="staff-img">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sylvenus Simiyu" class="staff-img">
                     <h3 class="staff-name">Sylvenus Simiyu</h3>
-                    <p class="staff-role">Backend Developer & Database Specialist</p>
-                    <p>Implemented server-side functionality and database architecture for the website.</p>
+                    <p class="staff-role">Frontend Developer & Accessibility Specialist</p>
+                    <p>Implemented interactive features and ensured the website meets modern accessibility standards.</p>
                     <div class="staff-contact">
                         <div class="contact-info">
                             <div class="contact-item">
@@ -1095,7 +1206,7 @@
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
-                                <span>+254 7XX XXX XXX</span>
+                                <span>+254 700 000 003</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fab fa-github"></i>
@@ -1106,10 +1217,10 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <img src="#" alt="Trevor Juma" class="staff-img">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Trevor Juma" class="staff-img">
                     <h3 class="staff-name">Trevor Juma</h3>
-                    <p class="staff-role">Database Architect & System Analyst</p>
-                    <p>Designed and optimized database structures and performed system analysis.</p>
+                    <p class="staff-role">Frontend Developer & Performance Analyst</p>
+                    <p>Optimized website performance and implemented responsive design patterns for various screen sizes.</p>
                     <div class="staff-contact">
                         <div class="contact-info">
                             <div class="contact-item">
@@ -1118,7 +1229,7 @@
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
-                                <span>+254 7XX XXX XXX</span>
+                                <span>+254 700 000 004</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fab fa-github"></i>
@@ -1129,23 +1240,23 @@
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <img src="#" alt="Dorcass" class="staff-img">
-                    <h3 class="staff-name">Dorcas</h3>
-                    <p class="staff-role"> Designer & Branding Specialist</p>
-                    <p>Created visual elements, graphics, and maintained brand consistency throughout the website.</p>
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Shabati Graphics" class="staff-img">
+                    <h3 class="staff-name">Shabati Graphics</h3>
+                    <p class="staff-role">Visual Designer & Frontend Developer</p>
+                    <p>Created visual elements, graphics, and maintained design consistency throughout the website interface.</p>
                     <div class="staff-contact">
                         <div class="contact-info">
                             <div class="contact-item">
                                 <i class="fas fa-envelope"></i>
-                                <span>Dorcas@egerton.ac.ke</span>
+                                <span>shabati@egerton.ac.ke</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
-                                <span>+254 7XX XXX XXX</span>
+                                <span>+254 700 000 005</span>
                             </div>
                             <div class="contact-item">
                                 <i class="fab fa-github"></i>
-                                <span>Dorcas</span>
+                                <span>shabati</span>
                             </div>
                         </div>
                     </div>
@@ -1166,7 +1277,7 @@
                     <div class="contact-info">
                         <div class="contact-item" style="margin-bottom: var(--space-md);">
                             <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
-                            <p>Egerton University, Faculty of Science, First Floor (Right Wing), Njoro, Nakuru</p>
+                            <p>Egerton University, Faculty of Science, First Floor (Right Wing), Njoro, Kenya</p>
                         </div>
                         <div class="contact-item" style="margin-bottom: var(--space-md);">
                             <h4><i class="fas fa-phone"></i> Phone</h4>
@@ -1331,30 +1442,34 @@
         function initMobileMenu() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navMenu = document.getElementById('navMenu');
+            const overlay = document.getElementById('overlay');
             const navLinks = document.querySelectorAll('.nav-link');
             
-            if (mobileMenuBtn && navMenu) {
+            if (mobileMenuBtn && navMenu && overlay) {
                 // Toggle mobile menu
-                mobileMenuBtn.addEventListener('click', function() {
+                function toggleMobileMenu() {
                     navMenu.classList.toggle('active');
+                    overlay.classList.toggle('active');
                     mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
                         '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-                });
+                }
+                
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
                 
                 // Close mobile menu when clicking on a link
                 navLinks.forEach(link => {
                     link.addEventListener('click', function() {
                         navMenu.classList.remove('active');
+                        overlay.classList.remove('active');
                         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                     });
                 });
                 
-                // Close mobile menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!navMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
-                        navMenu.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
+                // Close mobile menu when clicking on overlay
+                overlay.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    overlay.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                 });
             }
         }
