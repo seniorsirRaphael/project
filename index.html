@@ -4,20 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Department of Computer and Applied Computer Science - Egerton University</title>
-    
-    <!-- Link to Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ===========================
            CSS VARIABLES AND RESET
-           This section defines reusable variables and resets default browser styles
         =========================== */
         :root {
-            /* Color Palette - Improved contrast for better readability */
+            /* Color Palette */
             --primary-blue: #00274D;
             --secondary-blue: #004080;
             --accent-gold: #D4AF37;
@@ -48,32 +42,29 @@
             --radius-md: 8px;
             --radius-lg: 16px;
             
-            /* Shadows - Enhanced for better visual hierarchy */
+            /* Shadows */
             --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
             --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
             --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
             --shadow-xl: 0 12px 24px rgba(0,0,0,0.25);
             --shadow-gold: 0 4px 12px rgba(212, 175, 55, 0.3);
             
-            /* Transitions - Added for smooth animations */
+            /* Transitions */
             --transition-fast: 0.2s ease;
             --transition-normal: 0.3s ease;
             --transition-slow: 0.5s ease;
         }
 
-        /* Reset default browser styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Smooth scrolling for better user experience */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Base body styles */
         body {
             font-family: var(--font-primary);
             line-height: 1.7;
@@ -84,7 +75,6 @@
 
         /* ===========================
            TYPOGRAPHY
-           Improved text styling for better readability
         =========================== */
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-heading);
@@ -125,7 +115,6 @@
 
         /* ===========================
            LAYOUT COMPONENTS
-           Container and section styling
         =========================== */
         .container {
             width: 100%;
@@ -160,7 +149,6 @@
 
         /* ===========================
            HEADER AND NAVIGATION
-           Improved with logo and better navigation
         =========================== */
         header {
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
@@ -184,11 +172,11 @@
             gap: var(--space-sm);
         }
 
-        /* Using local logo image */
         .logo-img {
             height: 60px;
             width: auto;
             transition: transform var(--transition-normal);
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
         .logo-img:hover {
@@ -268,7 +256,6 @@
 
         /* ===========================
            HERO SECTION
-           Improved with better contrast and local image
         =========================== */
         .hero {
             background: linear-gradient(rgba(0, 39, 77, 0.85), rgba(0, 64, 128, 0.85)), 
@@ -354,7 +341,6 @@
 
         /* ===========================
            CARDS AND GRIDS
-           Enhanced with shadows, hover effects and flexbox/grid layouts
         =========================== */
         .card {
             background: var(--white);
@@ -412,7 +398,6 @@
 
         /* ===========================
            FLEXBOX LAYOUTS
-           Implementing flexbox and nested flexbox as requested
         =========================== */
         .flex-container {
             display: flex;
@@ -458,7 +443,6 @@
 
         /* ===========================
            STAFF SECTION
-           Improved with better styling and local images
         =========================== */
         .staff-card {
             text-align: center;
@@ -514,7 +498,6 @@
 
         /* ===========================
            FACILITIES SECTION
-           Enhanced with overlay effects
         =========================== */
         .facility-card {
             position: relative;
@@ -539,7 +522,6 @@
 
         /* ===========================
            RESEARCH SECTION
-           Improved with better contrast
         =========================== */
         .research-area {
             background: var(--light-gray);
@@ -558,7 +540,6 @@
 
         /* ===========================
            FORMS
-           Styled form elements
         =========================== */
         .form-group {
             margin-bottom: var(--space-md);
@@ -587,7 +568,6 @@
 
         /* ===========================
            POSITIONING EXAMPLES
-           Using relative and absolute positioning as requested
         =========================== */
         .position-container {
             position: relative;
@@ -634,7 +614,6 @@
 
         /* ===========================
            FOOTER
-           Styled footer section
         =========================== */
         footer {
             background: var(--dark-gray);
@@ -706,7 +685,6 @@
 
         /* ===========================
            ANIMATIONS AND EFFECTS
-           Custom animations for enhanced user experience
         =========================== */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -751,7 +729,6 @@
 
         /* ===========================
            TEXT CONTRAST IMPROVEMENTS
-           Ensuring text is readable against all backgrounds
         =========================== */
         .text-contrast {
             color: var(--text-dark);
@@ -771,7 +748,6 @@
 
         /* ===========================
            RESPONSIVE DESIGN
-           Ensuring the site works well on all devices
         =========================== */
         @media (max-width: 992px) {
             h1 { font-size: 2.2rem; }
@@ -860,7 +836,6 @@
 
         /* ===========================
            MOBILE MENU OVERLAY
-           Overlay for mobile menu
         =========================== */
         .overlay {
             display: none;
@@ -937,7 +912,7 @@
                 <div class="flex-container">
                     <div class="flex-item fade-in">
                         <h3>Our Mission</h3>
-                        <p>The Department of Computer and Applied Computer Science at Egerton University is a center of excellence in computing education, research, and innovation.</p>
+                        <p>The Department of Computer and Applied Computer Science at Egerton University is a center of excellence in computing education, research, and innovation. Our programs are designed to equip students with the knowledge and skills needed to excel in the rapidly evolving field of computer science.</p>
                         
                         <!-- Nested flexbox example -->
                         <div class="nested-flex">
@@ -957,7 +932,7 @@
                     </div>
                     <div class="flex-item fade-in">
                         <h3>Our Commitment</h3>
-                        <p>We are dedicated to providing quality education that combines theoretical knowledge with practical applications, preparing students for successful careers in technology.</p>
+                        <p>We are dedicated to providing quality education that combines theoretical knowledge with practical applications, preparing students for successful careers in technology. With state-of-the-art facilities, experienced faculty, and strong industry partnerships, we provide an environment that fosters academic excellence and professional growth.</p>
                         <div class="card">
                             <!-- Using local image -->
                             <img src="images/students-collaborating.jpg" alt="Students collaborating" class="card-img">
@@ -973,19 +948,19 @@
                     <div class="card fade-in">
                         <div class="card-content">
                             <h3 class="card-title">Modern Curriculum</h3>
-                            <p>Our programs are regularly updated to reflect the latest trends and technologies in computer science.</p>
+                            <p>Our programs are regularly updated to reflect the latest trends and technologies in computer science, ensuring our graduates are industry-ready.</p>
                         </div>
                     </div>
                     <div class="card fade-in">
                         <div class="card-content">
                             <h3 class="card-title">Experienced Faculty</h3>
-                            <p>Learn from professors and industry professionals with years of practical experience.</p>
+                            <p>Learn from professors and industry professionals with years of practical experience and research expertise.</p>
                         </div>
                     </div>
                     <div class="card fade-in">
                         <div class="card-content">
                             <h3 class="card-title">Career Support</h3>
-                            <p>We provide career guidance and connections to help our graduates secure rewarding positions.</p>
+                            <p>We provide career guidance, internship opportunities, and industry connections to help our graduates secure rewarding positions.</p>
                         </div>
                     </div>
                 </div>
@@ -1000,10 +975,13 @@
             <div class="grid grid-2">
                 <div class="fade-in">
                     <h3>History</h3>
-                    <p>Established in 1992, the Department of Computer and Applied Computer Science at Egerton University has been at the forefront of computing education and research in Kenya.</p>
+                    <p>Established in 1992, the Department of Computer and Applied Computer Science at Egerton University has been at the forefront of computing education and research in Kenya. Our department was created to respond to the growing demand for computer science professionals in Kenya and beyond.</p>
                     
                     <h3>Vision</h3>
-                    <p>To be a leading center of excellence in computer science and ICT education, research, and innovation in Kenya and beyond.</p>
+                    <p>To be a leading center of excellence in computer science and ICT education, research, and innovation in Kenya and beyond, producing graduates who are globally competitive and capable of driving technological advancement.</p>
+                    
+                    <h3>Mission</h3>
+                    <p>To provide quality education in computing and information technology, conduct innovative research that addresses societal challenges, and produce graduates who can solve real-world problems using technology.</p>
                     
                     <!-- Position relative example -->
                     <div class="position-relative">
@@ -1013,6 +991,7 @@
                             <li>Innovation and creativity in problem-solving</li>
                             <li>Integrity and ethical conduct</li>
                             <li>Collaboration and teamwork</li>
+                            <li>Professionalism and commitment to lifelong learning</li>
                         </ul>
                     </div>
                 </div>
@@ -1022,7 +1001,7 @@
                         <img src="images/department-building.jpg" alt="Department Building" class="card-img">
                         <div class="card-content">
                             <h3 class="card-title">Message from the Head of Department</h3>
-                            <p>"Welcome to the Department of Computer and Applied Computer Science. We are committed to equipping students with practical skills, research experience, and the knowledge necessary to thrive in the digital economy."</p>
+                            <p>"Welcome to the Department of Computer and Applied Computer Science. We are committed to equipping students with practical skills, research experience, and the knowledge necessary to thrive in the digital economy. Our faculty members are dedicated to providing a stimulating learning environment that fosters innovation and critical thinking."</p>
                             <p><strong>— Dr. Zachary O. Bosire, Head of Department</strong></p>
                         </div>
                     </div>
@@ -1049,7 +1028,7 @@
                 <div class="card fade-in">
                     <div class="card-content">
                         <h3 class="card-title">BSc Computer Science</h3>
-                        <p class="dark-text">A comprehensive four-year program covering programming, algorithms, software engineering, networking, databases, and artificial intelligence.</p>
+                        <p class="dark-text">A comprehensive four-year program covering programming, algorithms, software engineering, networking, databases, and artificial intelligence. Students engage in hands-on labs, industry attachments, and a final year project to apply their knowledge.</p>
                         <h4>Career Opportunities</h4>
                         <ul class="dark-text">
                             <li>Software Developer</li>
@@ -1063,7 +1042,7 @@
                 <div class="card fade-in">
                     <div class="card-content">
                         <h3 class="card-title">BSc Applied Computer Science</h3>
-                        <p class="dark-text">Focuses on the application of computing in real-world settings, integrating programming, database systems, and applied technologies.</p>
+                        <p class="dark-text">Focuses on the application of computing in real-world settings, integrating programming, database systems, information management, and applied technologies to solve societal and industrial challenges.</p>
                         <h4>Career Opportunities</h4>
                         <ul class="dark-text">
                             <li>IT Consultant</li>
@@ -1077,7 +1056,7 @@
                 <div class="card fade-in">
                     <div class="card-content">
                         <h3 class="card-title">MSc Programs</h3>
-                        <p class="dark-text">Advanced training in computer science with research opportunities in AI, cybersecurity, data science, and software engineering.</p>
+                        <p class="dark-text">Advanced training in computer science with research opportunities in AI, cybersecurity, data science, and software engineering. Focused on applied research and practical implementation of computing solutions across industries.</p>
                         <h4>Specializations</h4>
                         <ul class="dark-text">
                             <li>Artificial Intelligence</li>
@@ -1104,7 +1083,7 @@
                     <img src="images/staff/dr-bosire.jpg" alt="Dr. Zachary O. Bosire" class="staff-img">
                     <h3 class="staff-name">Dr. Zachary O. Bosire</h3>
                     <p class="staff-role">Head of Department</p>
-                    <p>Provides academic leadership and strategic direction for the department. His research focuses on advancing computer science education.</p>
+                    <p>Provides academic leadership and strategic direction for the department. His research focuses on advancing computer science education and research that addresses both local and global challenges.</p>
                     <div class="staff-contact">
                         <div class="contact-info">
                             <div class="contact-item">
@@ -1114,6 +1093,10 @@
                             <div class="contact-item">
                                 <i class="fas fa-phone"></i>
                                 <span>+254 722 123 456</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-building"></i>
+                                <span>Room One, Faculty Of Science Building</span>
                             </div>
                         </div>
                     </div>
@@ -1134,6 +1117,10 @@
                                 <i class="fas fa-envelope"></i>
                                 <span>p.ongalo@egerton.ac.ke</span>
                             </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 722 234 567</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1150,6 +1137,10 @@
                                 <i class="fas fa-envelope"></i>
                                 <span>g.odongo@egerton.ac.ke</span>
                             </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 722 345 678</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1159,12 +1150,76 @@
                     <img src="images/staff/dr-kemoi.jpg" alt="Dr. Peter K. Kemoi" class="staff-img">
                     <h3 class="staff-name">Dr. Peter K. Kemoi</h3>
                     <p class="staff-role">Lecturer – Networks & Cybersecurity</p>
-                    <p>Focuses on computer networks, cybersecurity, and distributed systems with several publications.</p>
+                    <p>Focuses on computer networks, cybersecurity, and distributed systems with several publications in international journals.</p>
                     <div class="staff-contact">
                         <div class="contact-info">
                             <div class="contact-item">
                                 <i class="fas fa-envelope"></i>
                                 <span>p.kemoi@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 722 456 789</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card card fade-in">
+                    <!-- Using local image -->
+                    <img src="images/staff/mr-njoroge.jpg" alt="Mr. Charles N. Njoroge" class="staff-img">
+                    <h3 class="staff-name">Mr. Charles N. Njoroge</h3>
+                    <p class="staff-role">Lecturer – Web Systems</p>
+                    <p>Specializes in web development, user experience design, and front-end technologies.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>c.njoroge@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 722 567 890</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card card fade-in">
+                    <!-- Using local image -->
+                    <img src="images/staff/ms-kipiyegen.jpg" alt="Ms. Noela C. Kipiyegen" class="staff-img">
+                    <h3 class="staff-name">Ms. Noela C. Kipiyegen</h3>
+                    <p class="staff-role">Lecturer – Databases & Information Systems</p>
+                    <p>Expert in database management systems, information retrieval, and data modeling.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>n.kipiyegen@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 722 678 901</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card card fade-in">
+                    <!-- Using local image -->
+                    <img src="images/staff/mr-rop.jpg" alt="Mr. Leonard K. Rop" class="staff-img">
+                    <h3 class="staff-name">Mr. Leonard K. Rop</h3>
+                    <p class="staff-role">Senior Technologist</p>
+                    <p>Manages computer laboratories and provides technical support for departmental activities.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>l.rop@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 722 789 012</span>
                             </div>
                         </div>
                     </div>
@@ -1181,15 +1236,18 @@
                 <div class="fade-in">
                     <div class="research-area text-contrast">
                         <h3>Artificial Intelligence & Machine Learning</h3>
-                        <p>Applications in health, agriculture, and business analytics. Our researchers are developing AI solutions for crop disease detection.</p>
+                        <p>Applications in health, agriculture, and business analytics. Our researchers are developing AI solutions for crop disease detection and predictive healthcare models.</p>
+                        <p><strong>Key Projects:</strong> AI-powered crop disease detection system for smallholder farmers; Machine learning models for predicting student academic performance.</p>
                     </div>
                     <div class="research-area text-contrast">
                         <h3>Data Science & Big Data Analytics</h3>
-                        <p>Leveraging large datasets for decision-making in various sectors including finance and public health.</p>
+                        <p>Leveraging large datasets for decision-making in various sectors including finance, public health, and environmental monitoring.</p>
+                        <p><strong>Key Projects:</strong> Predictive analytics for financial markets; Big data solutions for healthcare management.</p>
                     </div>
                     <div class="research-area text-contrast">
                         <h3>Cybersecurity & Networks</h3>
-                        <p>Ensuring secure digital environments through advanced cryptographic techniques and network protocols.</p>
+                        <p>Ensuring secure digital environments and resilient infrastructures through advanced cryptographic techniques and network protocols.</p>
+                        <p><strong>Key Projects:</strong> Development of a secure e-voting system using blockchain technology; Network intrusion detection systems.</p>
                     </div>
                 </div>
                 <div class="fade-in">
@@ -1199,6 +1257,12 @@
                         <div class="card-content">
                             <h3 class="card-title">Research Collaborations</h3>
                             <p>We partner with industry leaders and international institutions to advance cutting-edge research in computing technologies.</p>
+                            <h4>Current Collaborations:</h4>
+                            <ul>
+                                <li>Kenya Education Network (KENET) – ICT Infrastructure & Research Support</li>
+                                <li>Kenya National Innovation Agency (KENIA) – Student innovation incubation</li>
+                                <li>International universities for joint research projects and exchange programs</li>
+                            </ul>
                             <a class="btn btn-outline" style="margin-top: var(--space-sm);">View Research Projects</a>
                         </div>
                     </div>
@@ -1217,7 +1281,7 @@
                     <img src="images/facilities/programming-lab.jpg" alt="Programming Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Programming Lab</h3>
-                        <p>Equipped with modern PCs for C, C++, Java, and Python programming exercises.</p>
+                        <p>Equipped with modern PCs for C, C++, Java, and Python programming exercises. Features high-speed internet and specialized software for software development.</p>
                     </div>
                 </div>
                 <div class="facility-card card fade-in">
@@ -1225,7 +1289,7 @@
                     <img src="images/facilities/networking-lab.jpg" alt="Networking Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Networking Lab</h3>
-                        <p>Dedicated for networking simulations, router configuration, and cybersecurity training.</p>
+                        <p>Dedicated for networking simulations, router configuration, and cybersecurity training. Includes Cisco equipment and specialized network analysis tools.</p>
                     </div>
                 </div>
                 <div class="facility-card card fade-in">
@@ -1233,7 +1297,205 @@
                     <img src="images/facilities/multimedia-lab.jpg" alt="Multimedia Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Multimedia Lab</h3>
-                        <p>Supports graphic design, web development, and multimedia projects.</p>
+                        <p>Supports graphic design, web development, and multimedia projects. Equipped with high-end computers and creative software suites.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fade-in" style="margin-top: var(--space-xl);">
+                <h3>Software Resources</h3>
+                <div class="grid grid-4">
+                    <div>
+                        <h4>Programming</h4>
+                        <ul>
+                            <li>Visual Studio</li>
+                            <li>Eclipse</li>
+                            <li>IntelliJ IDEA</li>
+                            <li>PyCharm</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Database</h4>
+                        <ul>
+                            <li>MySQL</li>
+                            <li>Oracle</li>
+                            <li>MongoDB</li>
+                            <li>PostgreSQL</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Networking</h4>
+                        <ul>
+                            <li>Cisco Packet Tracer</li>
+                            <li>Wireshark</li>
+                            <li>GNS3</li>
+                            <li>Nmap</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Design</h4>
+                        <ul>
+                            <li>Adobe Creative Suite</li>
+                            <li>Figma</li>
+                            <li>Blender</li>
+                            <li>Unity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developers Section -->
+    <section id="developers" class="section section-light">
+        <div class="container">
+            <h2>Website Development Team</h2>
+            <p>This website was developed by a team of talented students from the Department of Computer and Applied Computer Science as part of their frontend development project.</p>
+            
+            <div class="grid grid-3">
+                <div class="staff-card card fade-in">
+                    <!-- Using local image -->
+                    <img src="images/developers/raphael.jpg" alt="Raphael Mwendwa" class="staff-img">
+                    <h3 class="staff-name">Raphael Mwendwa</h3>
+                    <p class="staff-role">Project Lead & Frontend Developer</p>
+                    <p>Responsible for overall website architecture, user interface design, and project coordination.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>siraphaelmwendwa@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 757 319 350</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <span>seniorsirraphael</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card card fade-in">
+                    <!-- Using local image -->
+                    <img src="images/developers/dian.jpg" alt="Dian Bryner Ochieng" class="staff-img">
+                    <h3 class="staff-name">Dian Bryner Ochieng</h3>
+                    <p class="staff-role">UI/UX Designer & Frontend Developer</p>
+                    <p>Designed the user interface and implemented responsive layouts for optimal user experience across all devices.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>dianochieng@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 700 000 001</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <span>dianochieng</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card card fade-in">
+                    <!-- Using local image -->
+                    <img src="images/developers/lily.jpg" alt="Lily Mae Oduor" class="staff-img">
+                    <h3 class="staff-name">Lily Mae Oduor</h3>
+                    <p class="staff-role">Content Strategist & Frontend Developer</p>
+                    <p>Focused on content organization, information architecture, and ensuring content accessibility across all screen sizes.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>lilyoduor@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 700 000 002</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <span>lilyoduor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-3" style="margin-top: var(--space-md);">
+                <div class="staff-card card fade-in">
+                    <!-- Using local image -->
+                    <img src="images/developers/sylvenus.jpg" alt="Sylvenus Simiyu" class="staff-img">
+                    <h3 class="staff-name">Sylvenus Simiyu</h3>
+                    <p class="staff-role">Frontend Developer & Accessibility Specialist</p>
+                    <p>Implemented interactive features and ensured the website meets modern accessibility standards.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>sylvenus@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 700 000 003</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <span>sylvenus</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card card fade-in">
+                    <!-- Using local image -->
+                    <img src="images/developers/trevor.jpg" alt="Trevor Juma" class="staff-img">
+                    <h3 class="staff-name">Trevor Juma</h3>
+                    <p class="staff-role">Frontend Developer & Performance Analyst</p>
+                    <p>Optimized website performance and implemented responsive design patterns for various screen sizes.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>trevorjuma@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 700 000 004</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <span>trevorjuma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="staff-card card fade-in">
+                    <!-- Using local image -->
+                    <img src="images/developers/dorcas.jpg" alt="Dorcas Muthoni" class="staff-img">
+                    <h3 class="staff-name">Dorcas Muthoni</h3>
+                    <p class="staff-role">Visual Designer & Frontend Developer</p>
+                    <p>Created visual elements, graphics, and maintained design consistency throughout the website interface.</p>
+                    <div class="staff-contact">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>dorcasmuthoni@egerton.ac.ke</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 700 000 005</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <span>Dorcas</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1247,12 +1509,12 @@
             <div class="grid grid-2">
                 <div class="fade-in">
                     <h3>Get In Touch</h3>
-                    <p>We welcome inquiries from prospective students, researchers, and collaborators.</p>
+                    <p>We welcome inquiries from prospective students, researchers, and collaborators. Our team is available to answer any questions you may have about our programs, research, or facilities.</p>
                     
                     <div class="contact-info">
                         <div class="contact-item" style="margin-bottom: var(--space-md);">
                             <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
-                            <p>Egerton University, Faculty of Science, Njoro, Kenya</p>
+                            <p>Egerton University, Faculty of Science, First Floor (Right Wing), Njoro, Kenya</p>
                         </div>
                         <div class="contact-item" style="margin-bottom: var(--space-md);">
                             <h4><i class="fas fa-phone"></i> Phone</h4>
@@ -1261,6 +1523,20 @@
                         <div class="contact-item" style="margin-bottom: var(--space-md);">
                             <h4><i class="fas fa-envelope"></i> Email</h4>
                             <p>compsci@egerton.ac.ke</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4><i class="fas fa-clock"></i> Office Hours</h4>
+                            <p>Monday – Friday, 8:00 AM – 5:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: var(--space-lg);">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1273,6 +1549,16 @@
                         <div class="form-group">
                             <label for="email">Email Address</label>
                             <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject">
+                                <option value="general">General Inquiry</option>
+                                <option value="admission">Admission Information</option>
+                                <option value="program">Program Details</option>
+                                <option value="research">Research Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
@@ -1291,7 +1577,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Department of Computer Science</h3>
-                    <p>Egerton University is committed to excellence in computer science education, research, and innovation.</p>
+                    <p>Egerton University is committed to excellence in computer science education, research, and innovation. Our department continues to be a leader in technological education in Kenya and beyond.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
@@ -1299,12 +1585,15 @@
                         <li><a data-section="home">Home</a></li>
                         <li><a data-section="about">About Us</a></li>
                         <li><a data-section="programs">Programs</a></li>
+                        <li><a data-section="staff">Faculty</a></li>
                         <li><a data-section="research">Research</a></li>
+                        <li><a data-section="facilities">Facilities</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Information</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Egerton University, Njoro, Kenya</p>
+                    <p><i class="fas fa-phone"></i> +254 51 221 7683</p>
                     <p><i class="fas fa-envelope"></i> compsci@egerton.ac.ke</p>
                 </div>
             </div>
@@ -1439,6 +1728,7 @@
                     // Get form values
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
+                    const subject = document.getElementById('subject').value;
                     const message = document.getElementById('message').value.trim();
                     
                     // Basic validation
@@ -1613,6 +1903,23 @@
                     }, 300);
                 }
             }, 5000);
+            
+            // Add CSS for notifications if not already added
+            if (!document.querySelector('#notification-styles')) {
+                const style = document.createElement('style');
+                style.id = 'notification-styles';
+                style.textContent = `
+                    @keyframes slideIn {
+                        from { transform: translateX(100%); opacity: 0; }
+                        to { transform: translateX(0); opacity: 1; }
+                    }
+                    @keyframes slideOut {
+                        from { transform: translateX(0); opacity: 1; }
+                        to { transform: translateX(100%); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
         }
 
         // =============================
