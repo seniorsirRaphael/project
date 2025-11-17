@@ -172,15 +172,22 @@
             gap: var(--space-sm);
         }
 
+        /* Circular Logo Styling */
         .logo-img {
             height: 60px;
-            width: auto;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-gold);
             transition: transform var(--transition-normal);
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            background-color: var(--white);
+            padding: 5px;
         }
 
         .logo-img:hover {
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: var(--shadow-gold);
         }
 
         .logo-text h1 {
@@ -646,6 +653,7 @@
         .footer-links a {
             color: #adb5bd;
             transition: color var(--transition-fast);
+            cursor: pointer;
         }
 
         .footer-links a:hover {
@@ -1619,6 +1627,7 @@
             initContactForm();
             initAnimations();
             initBackToTop();
+            initFooterLinks(); // Initialize footer quick links
         });
 
         // =============================
@@ -1673,6 +1682,21 @@
             
             // Show home section by default
             showSection('home');
+        }
+
+        // =============================
+        // FOOTER QUICK LINKS FUNCTIONALITY
+        // Handles footer quick links navigation
+        // =============================
+        function initFooterLinks() {
+            const footerLinks = document.querySelectorAll('.footer-links a[data-section]');
+            
+            footerLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    showSection(sectionId);
+                });
+            });
         }
 
         // =============================
