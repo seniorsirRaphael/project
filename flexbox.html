@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox vs CSS Grid - Complete Guide</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===========================
+           CSS VARIABLES AND RESET
+        =========================== */
+        :root {
+            --primary-purple: #6366f1;
+            --secondary-indigo: #4f46e5;
+            --accent-pink: #ec4899;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --dark-charcoal: #1e293b;
+            --text-dark: #334155;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===========================
+           HEADER - USING FLEXBOX
+        =========================== */
+        header {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-indigo));
+            color: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--accent-pink);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-pink);
+        }
+
+        /* ===========================
+           HERO SECTION - USING GRID
+        =========================== */
+        .hero {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+        }
+
+        .hero-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            place-items: center;
+        }
+
+        .grid-demo, .flex-demo {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid var(--medium-gray);
+        }
+
+        /* ===========================
+           COMPARISON SECTION - USING BOTH
+        =========================== */
+        .comparison {
+            padding: 4rem 0;
+            background: var(--light-gray);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-purple);
+            margin-bottom: 3rem;
+        }
+
+        /* Grid for overall layout */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        /* Flexbox for card content */
+        .comparison-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            color: var(--accent-pink);
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            color: var(--primary-purple);
+            font-weight: bold;
+        }
+
+        /* ===========================
+           USE CASES - GRID LAYOUT
+        =========================== */
+        .use-cases {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .use-case-card {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-purple);
+        }
+
+        /* ===========================
+           EXAMPLES - FLEXBOX LAYOUT
+        =========================== */
+        .examples {
+            padding: 4rem 0;
+            background: var(--light-gray);
+        }
+
+        .example-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .example {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .code-demo {
+            background: var(--dark-charcoal);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .demo-visual {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .demo-item {
+            background: var(--primary-purple);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        /* ===========================
+           WHEN TO USE - GRID LAYOUT
+        =========================== */
+        .when-to-use {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .decision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .decision-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light-gray);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* ===========================
+           FOOTER - FLEXBOX
+        =========================== */
+        footer {
+            background: var(--dark-charcoal);
+            color: var(--white);
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent-pink);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ===========================
+           RESPONSIVE DESIGN
+        =========================== */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-menu {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - Flexbox Example -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-layout logo-icon"></i>
+                    <div>
+                        <h1>Flexbox vs Grid</h1>
+                        <p>Complete CSS Layout Guide</p>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#comparison" class="nav-link">Comparison</a></li>
+                    <li><a href="#use-cases" class="nav-link">Use Cases</a></li>
+                    <li><a href="#examples" class="nav-link">Examples</a></li>
+                    <li><a href="#when-to-use" class="nav-link">When to Use</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Grid Example -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Master CSS Layouts</h1>
+                    <p>Understand the fundamental differences between Flexbox and CSS Grid, and learn when to use each for optimal web layouts.</p>
+                    <p>Both are powerful CSS layout systems, but they serve different purposes and excel in different scenarios.</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="grid-demo">
+                        <i class="fas fa-grid fa-3x" style="color: var(--primary-purple);"></i>
+                        <h3>CSS Grid</h3>
+                        <p>2D Layout System</p>
+                    </div>
+                    <div class="flex-demo">
+                        <i class="fas fa-bars fa-3x" style="color: var(--accent-pink);"></i>
+                        <h3>Flexbox</h3>
+                        <p>1D Layout System</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section - Using Both -->
+    <section id="comparison" class="comparison">
+        <div class="container">
+            <h2 class="section-title">Key Differences</h2>
+            <div class="comparison-grid">
+                <!-- Flexbox Card -->
+                <div class="comparison-card">
+                    <div class="card-header">
+                        <i class="fas fa-bars card-icon"></i>
+                        <h3>Flexbox</h3>
+                    </div>
+                    <p><strong>One-dimensional</strong> layout system for arranging items in rows OR columns.</p>
+                    <ul class="feature-list">
+                        <li>Content-first approach</li>
+                        <li>Ideal for component layouts</li>
+                        <li>Great for alignment and distribution</li>
+                        <li>Dynamic content flow</li>
+                        <li>Flexible item sizing</li>
+                    </ul>
+                    <div class="code-demo">
+                        .container {<br>
+                        &nbsp;&nbsp;display: flex;<br>
+                        &nbsp;&nbsp;justify-content: space-between;<br>
+                        &nbsp;&nbsp;align-items: center;<br>
+                        }
+                    </div>
+                </div>
+
+                <!-- Grid Card -->
+                <div class="comparison-card">
+                    <div class="card-header">
+                        <i class="fas fa-grid card-icon"></i>
+                        <h3>CSS Grid</h3>
+                    </div>
+                    <p><strong>Two-dimensional</strong> layout system for rows AND columns simultaneously.</p>
+                    <ul class="feature-list">
+                        <li>Layout-first approach</li>
+                        <li>Ideal for page layouts</li>
+                        <li>Explicit track definition</li>
+                        <li>Precise item placement</li>
+                        <li>Complex overlapping layouts</li>
+                    </ul>
+                    <div class="code-demo">
+                        .container {<br>
+                        &nbsp;&nbsp;display: grid;<br>
+                        &nbsp;&nbsp;grid-template-columns: 1fr 1fr;<br>
+                        &nbsp;&nbsp;gap: 20px;<br>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section - Grid Layout -->
+    <section id="use-cases" class="use-cases">
+        <div class="container">
+            <h2 class="section-title">When to Use Each</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <h3>Use Flexbox For:</h3>
+                    <ul class="feature-list">
+                        <li>Navigation menus</li>
+                        <li>Button groups</li>
+                        <li>Form controls</li>
+                        <li>Card content</li>
+                        <li>Small components</li>
+                        <li>Vertical centering</li>
+                    </ul>
+                </div>
+                <div class="use-case-card">
+                    <h3>Use Grid For:</h3>
+                    <ul class="feature-list">
+                        <li>Entire page layouts</li>
+                        <li>Complex dashboards</li>
+                        <li>Image galleries</li>
+                        <li>Card grids</li>
+                        <li>Forms with sections</li>
+                        <li>Magazine layouts</li>
+                    </ul>
+                </div>
+                <div class="use-case-card">
+                    <h3>Use Both Together:</h3>
+                    <ul class="feature-list">
+                        <li>Grid for overall layout</li>
+                        <li>Flexbox for nested components</li>
+                        <li>Grid for macro structure</li>
+                        <li>Flexbox for micro layouts</li>
+                        <li>Grid for page sections</li>
+                        <li>Flexbox for content within</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section - Flexbox Layout -->
+    <section id="examples" class="examples">
+        <div class="container">
+            <h2 class="section-title">Practical Examples</h2>
+            <div class="example-container">
+                <div class="example">
+                    <h3>Flexbox: Navigation Bar</h3>
+                    <div class="code-demo">
+                        .nav {<br>
+                        &nbsp;&nbsp;display: flex;<br>
+                        &nbsp;&nbsp;justify-content: space-between;<br>
+                        &nbsp;&nbsp;align-items: center;<br>
+                        &nbsp;&nbsp;gap: 2rem;<br>
+                        }
+                    </div>
+                    <div class="demo-visual">
+                        <div class="demo-item">Logo</div>
+                        <div class="demo-item">Home</div>
+                        <div class="demo-item">About</div>
+                        <div class="demo-item">Contact</div>
+                    </div>
+                </div>
+
+                <div class="example">
+                    <h3>Grid: Photo Gallery</h3>
+                    <div class="code-demo">
+                        .gallery {<br>
+                        &nbsp;&nbsp;display: grid;<br>
+                        &nbsp;&nbsp;grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));<br>
+                        &nbsp;&nbsp;gap: 1rem;<br>
+                        }
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;">
+                        <div style="background: var(--primary-purple); color: white; padding: 2rem; border-radius: 6px; text-align: center;">Photo 1</div>
+                        <div style="background: var(--primary-purple); color: white; padding: 2rem; border-radius: 6px; text-align: center;">Photo 2</div>
+                        <div style="background: var(--primary-purple); color: white; padding: 2rem; border-radius: 6px; text-align: center;">Photo 3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- When to Use Section - Grid Layout -->
+    <section id="when-to-use" class="when-to-use">
+        <div class="container">
+            <h2 class="section-title">Quick Decision Guide</h2>
+            <div class="decision-grid">
+                <div class="decision-card">
+                    <i class="fas fa-bars fa-2x" style="color: var(--accent-pink);"></i>
+                    <h3>Choose Flexbox When:</h3>
+                    <p>You need to align items in one direction (row OR column)</p>
+                </div>
+                <div class="decision-card">
+                    <i class="fas fa-grid fa-2x" style="color: var(--primary-purple);"></i>
+                    <h3>Choose Grid When:</h3>
+                    <p>You need control over both rows AND columns simultaneously</p>
+                </div>
+                <div class="decision-card">
+                    <i class="fas fa-sync fa-2x" style="color: var(--secondary-indigo);"></i>
+                    <h3>Use Both When:</h3>
+                    <p>Building complex layouts with nested components</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer - Flexbox Layout -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Flexbox vs Grid Guide</h3>
+                    <p>A comprehensive comparison of CSS layout systems for modern web development.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#comparison" style="color: #cbd5e0; text-decoration: none;">Comparison</a></li>
+                        <li><a href="#use-cases" style="color: #cbd5e0; text-decoration: none;">Use Cases</a></li>
+                        <li><a href="#examples" style="color: #cbd5e0; text-decoration: none;">Examples</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Flexbox vs Grid Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
