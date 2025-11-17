@@ -27,6 +27,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
@@ -46,8 +50,11 @@
         header {
             background: linear-gradient(135deg, var(--primary-purple), var(--secondary-indigo));
             color: var(--white);
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .header-content {
@@ -81,10 +88,36 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
         }
 
         .nav-link:hover {
             color: var(--accent-pink);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-pink);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         /* ===========================
@@ -106,6 +139,30 @@
             font-size: 3rem;
             color: var(--primary-purple);
             margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-purple);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: var(--secondary-indigo);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .hero-visual {
@@ -121,6 +178,12 @@
             border-radius: 12px;
             text-align: center;
             border: 2px solid var(--medium-gray);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .grid-demo:hover, .flex-demo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
 
         /* ===========================
@@ -136,6 +199,17 @@
             font-size: 2.5rem;
             color: var(--primary-purple);
             margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-pink);
+            margin: 1rem auto;
+            border-radius: 2px;
         }
 
         /* Grid for overall layout */
@@ -154,6 +228,13 @@
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
         .card-header {
@@ -206,6 +287,13 @@
             padding: 2rem;
             border-radius: 12px;
             border-left: 4px solid var(--primary-purple);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .use-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
 
         /* ===========================
@@ -227,6 +315,12 @@
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .example:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
         .code-demo {
@@ -236,6 +330,7 @@
             border-radius: 8px;
             margin: 1rem 0;
             font-family: 'Courier New', monospace;
+            overflow-x: auto;
         }
 
         .demo-visual {
@@ -281,6 +376,99 @@
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .decision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        /* ===========================
+           NEW CONTENT SECTIONS
+        =========================== */
+        .properties {
+            padding: 4rem 0;
+            background: var(--light-gray);
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .property-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .property-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .property-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .property-list li:last-child {
+            border-bottom: none;
+        }
+
+        .browser-support {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+
+        .support-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .support-table th, .support-table td {
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--medium-gray);
+        }
+
+        .support-table th {
+            background: var(--primary-purple);
+            color: var(--white);
+        }
+
+        .support-table tr:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        .support-good {
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        .support-fair {
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        .support-poor {
+            color: #ef4444;
+            font-weight: bold;
         }
 
         /* ===========================
@@ -321,6 +509,8 @@
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             transition: all 0.3s ease;
+            color: var(--white);
+            text-decoration: none;
         }
 
         .social-link:hover {
@@ -338,6 +528,20 @@
         /* ===========================
            RESPONSIVE DESIGN
         =========================== */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                gap: 2rem;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -349,12 +553,77 @@
             }
             
             .header-content {
-                flex-direction: column;
-                text-align: center;
+                flex-direction: row;
+                text-align: left;
             }
             
             .nav-menu {
-                justify-content: center;
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--secondary-indigo);
+                padding: 1rem 0;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .support-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .comparison, .use-cases, .examples, .when-to-use, .properties, .browser-support {
+                padding: 2rem 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .comparison-card, .use-case-card, .example, .decision-card, .property-card {
+                padding: 1.5rem;
+            }
+            
+            .hero-visual {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
             }
         }
     </style>
@@ -371,10 +640,15 @@
                         <p>Complete CSS Layout Guide</p>
                     </div>
                 </div>
-                <ul class="nav-menu">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
                     <li><a href="#comparison" class="nav-link">Comparison</a></li>
                     <li><a href="#use-cases" class="nav-link">Use Cases</a></li>
                     <li><a href="#examples" class="nav-link">Examples</a></li>
+                    <li><a href="#properties" class="nav-link">Properties</a></li>
+                    <li><a href="#browser-support" class="nav-link">Browser Support</a></li>
                     <li><a href="#when-to-use" class="nav-link">When to Use</a></li>
                 </ul>
             </div>
@@ -389,6 +663,7 @@
                     <h1>Master CSS Layouts</h1>
                     <p>Understand the fundamental differences between Flexbox and CSS Grid, and learn when to use each for optimal web layouts.</p>
                     <p>Both are powerful CSS layout systems, but they serve different purposes and excel in different scenarios.</p>
+                    <a href="#comparison" class="cta-button">Start Learning</a>
                 </div>
                 <div class="hero-visual">
                     <div class="grid-demo">
@@ -540,6 +815,110 @@
                         <div style="background: var(--primary-purple); color: white; padding: 2rem; border-radius: 6px; text-align: center;">Photo 3</div>
                     </div>
                 </div>
+
+                <div class="example">
+                    <h3>Flexbox: Card Component</h3>
+                    <div class="code-demo">
+                        .card {<br>
+                        &nbsp;&nbsp;display: flex;<br>
+                        &nbsp;&nbsp;flex-direction: column;<br>
+                        &nbsp;&nbsp;align-items: center;<br>
+                        &nbsp;&nbsp;text-align: center;<br>
+                        }
+                    </div>
+                    <div class="demo-visual" style="flex-direction: column; padding: 1.5rem;">
+                        <div style="background: var(--accent-pink); color: white; padding: 1rem; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h4 style="margin-bottom: 0.5rem;">User Profile</h4>
+                        <p style="margin-bottom: 1rem;">This is a user profile card with centered content using Flexbox.</p>
+                        <button style="background: var(--primary-purple); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px;">View Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section - New Content -->
+    <section id="properties" class="properties">
+        <div class="container">
+            <h2 class="section-title">Key Properties</h2>
+            <div class="properties-grid">
+                <div class="property-card">
+                    <h3>Flexbox Properties</h3>
+                    <ul class="property-list">
+                        <li><strong>display: flex</strong> - Creates a flex container</li>
+                        <li><strong>flex-direction</strong> - Sets direction of flex items</li>
+                        <li><strong>justify-content</strong> - Aligns items along main axis</li>
+                        <li><strong>align-items</strong> - Aligns items along cross axis</li>
+                        <li><strong>flex-wrap</strong> - Controls item wrapping</li>
+                        <li><strong>flex-grow</strong> - Controls item growth</li>
+                        <li><strong>flex-shrink</strong> - Controls item shrinking</li>
+                        <li><strong>flex-basis</strong> - Sets initial item size</li>
+                    </ul>
+                </div>
+                <div class="property-card">
+                    <h3>CSS Grid Properties</h3>
+                    <ul class="property-list">
+                        <li><strong>display: grid</strong> - Creates a grid container</li>
+                        <li><strong>grid-template-columns</strong> - Defines column tracks</li>
+                        <li><strong>grid-template-rows</strong> - Defines row tracks</li>
+                        <li><strong>grid-template-areas</strong> - Defines named grid areas</li>
+                        <li><strong>grid-gap</strong> - Sets gaps between tracks</li>
+                        <li><strong>grid-column/row</strong> - Positions items in grid</li>
+                        <li><strong>grid-area</strong> - Places items in named areas</li>
+                        <li><strong>justify/align-items</strong> - Aligns items in cells</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browser Support Section - New Content -->
+    <section id="browser-support" class="browser-support">
+        <div class="container">
+            <h2 class="section-title">Browser Support</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Both Flexbox and CSS Grid have excellent browser support in modern browsers. Here's a breakdown of current support:</p>
+            
+            <table class="support-table">
+                <thead>
+                    <tr>
+                        <th>Browser</th>
+                        <th>Flexbox Support</th>
+                        <th>CSS Grid Support</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chrome</td>
+                        <td class="support-good">Excellent (29+)</td>
+                        <td class="support-good">Excellent (57+)</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox</td>
+                        <td class="support-good">Excellent (28+)</td>
+                        <td class="support-good">Excellent (52+)</td>
+                    </tr>
+                    <tr>
+                        <td>Safari</td>
+                        <td class="support-good">Excellent (9+)</td>
+                        <td class="support-good">Excellent (10.1+)</td>
+                    </tr>
+                    <tr>
+                        <td>Edge</td>
+                        <td class="support-good">Excellent (12+)</td>
+                        <td class="support-good">Excellent (16+)</td>
+                    </tr>
+                    <tr>
+                        <td>IE</td>
+                        <td class="support-fair">Partial (10+)</td>
+                        <td class="support-poor">Limited (11+)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="margin-top: 2rem; text-align: center;">
+                <p><strong>Note:</strong> For legacy browser support, consider using fallbacks or polyfills. Both technologies are well-supported in modern browsers used by over 95% of users globally.</p>
             </div>
         </div>
     </section>
@@ -582,6 +961,7 @@
                         <li><a href="#comparison" style="color: #cbd5e0; text-decoration: none;">Comparison</a></li>
                         <li><a href="#use-cases" style="color: #cbd5e0; text-decoration: none;">Use Cases</a></li>
                         <li><a href="#examples" style="color: #cbd5e0; text-decoration: none;">Examples</a></li>
+                        <li><a href="#properties" style="color: #cbd5e0; text-decoration: none;">Properties</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -598,5 +978,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
