@@ -50,7 +50,7 @@
         header {
             background: linear-gradient(135deg, var(--primary-purple), var(--secondary-indigo));
             color: var(--white);
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -71,15 +71,45 @@
             gap: 1rem;
         }
 
+        /* Circular Logo Styling */
+        .logo-img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-pink);
+            transition: transform 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            background-color: var(--white);
+            padding: 5px;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+        }
+
         .logo-icon {
             font-size: 2.5rem;
             color: var(--accent-pink);
         }
 
+        .logo-text h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            color: var(--white);
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
 
@@ -118,25 +148,26 @@
             color: var(--white);
             font-size: 1.5rem;
             cursor: pointer;
+            z-index: 101;
         }
 
         /* ===========================
            HERO SECTION - USING GRID
         =========================== */
         .hero {
-            padding: 4rem 0;
+            padding: 3rem 0;
             background: var(--white);
         }
 
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 2rem;
             align-items: center;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--primary-purple);
             margin-bottom: 1rem;
             line-height: 1.2;
@@ -174,7 +205,7 @@
 
         .grid-demo, .flex-demo {
             background: var(--light-gray);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             text-align: center;
             border: 2px solid var(--medium-gray);
@@ -190,15 +221,15 @@
            COMPARISON SECTION - USING BOTH
         =========================== */
         .comparison {
-            padding: 4rem 0;
+            padding: 3rem 0;
             background: var(--light-gray);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--primary-purple);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             position: relative;
         }
 
@@ -216,13 +247,13 @@
         .comparison-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 2rem;
         }
 
         /* Flexbox for card content */
         .comparison-card {
             background: var(--white);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             display: flex;
@@ -268,23 +299,34 @@
             font-weight: bold;
         }
 
+        .code-demo {
+            background: var(--dark-charcoal);
+            color: var(--white);
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            font-size: 0.9rem;
+        }
+
         /* ===========================
            USE CASES - GRID LAYOUT
         =========================== */
         .use-cases {
-            padding: 4rem 0;
+            padding: 3rem 0;
             background: var(--white);
         }
 
         .use-cases-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .use-case-card {
             background: var(--light-gray);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             border-left: 4px solid var(--primary-purple);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -300,19 +342,19 @@
            EXAMPLES - FLEXBOX LAYOUT
         =========================== */
         .examples {
-            padding: 4rem 0;
+            padding: 3rem 0;
             background: var(--light-gray);
         }
 
         .example-container {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 2rem;
         }
 
         .example {
             background: var(--white);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -323,22 +365,12 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        .code-demo {
-            background: var(--dark-charcoal);
-            color: var(--white);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            font-family: 'Courier New', monospace;
-            overflow-x: auto;
-        }
-
         .demo-visual {
             display: flex;
             justify-content: space-around;
             align-items: center;
             background: var(--light-gray);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 8px;
             margin-top: 1rem;
             flex-wrap: wrap;
@@ -348,7 +380,7 @@
         .demo-item {
             background: var(--primary-purple);
             color: var(--white);
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 6px;
             font-weight: 500;
         }
@@ -357,19 +389,19 @@
            WHEN TO USE - GRID LAYOUT
         =========================== */
         .when-to-use {
-            padding: 4rem 0;
+            padding: 3rem 0;
             background: var(--white);
         }
 
         .decision-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
         }
 
         .decision-card {
             text-align: center;
-            padding: 2rem;
+            padding: 1.5rem;
             background: var(--light-gray);
             border-radius: 12px;
             display: flex;
@@ -389,19 +421,19 @@
            NEW CONTENT SECTIONS
         =========================== */
         .properties {
-            padding: 4rem 0;
+            padding: 3rem 0;
             background: var(--light-gray);
         }
 
         .properties-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .property-card {
             background: var(--white);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -421,6 +453,7 @@
         .property-list li {
             padding: 0.5rem 0;
             border-bottom: 1px solid var(--medium-gray);
+            font-size: 0.95rem;
         }
 
         .property-list li:last-child {
@@ -428,7 +461,7 @@
         }
 
         .browser-support {
-            padding: 4rem 0;
+            padding: 3rem 0;
             background: var(--white);
         }
 
@@ -477,7 +510,7 @@
         footer {
             background: var(--dark-charcoal);
             color: var(--white);
-            padding: 3rem 0 2rem;
+            padding: 2.5rem 0 1.5rem;
         }
 
         .footer-content {
@@ -491,7 +524,7 @@
 
         .footer-section {
             flex: 1;
-            min-width: 250px;
+            min-width: 200px;
         }
 
         .social-links {
@@ -523,6 +556,25 @@
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
             color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ===========================
+           MOBILE OVERLAY
+        =========================== */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 98;
+        }
+
+        .overlay.active {
+            display: block;
         }
 
         /* ===========================
@@ -534,11 +586,11 @@
             }
             
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
         }
 
@@ -550,6 +602,7 @@
             
             .comparison-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
             .header-content {
@@ -560,17 +613,29 @@
             .nav-menu {
                 display: none;
                 flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
                 background: var(--secondary-indigo);
-                padding: 1rem 0;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                padding-top: 5rem;
+                transition: left 0.3s ease;
+                z-index: 99;
+                box-shadow: 0 0 20px rgba(0,0,0,0.2);
             }
             
             .nav-menu.active {
-                display: flex;
+                left: 0;
+            }
+            
+            .nav-link {
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+                width: 100%;
+                display: block;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
             }
             
             .mobile-menu-btn {
@@ -578,16 +643,31 @@
             }
             
             .hero-content h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
             }
             
             .support-table {
                 display: block;
                 overflow-x: auto;
+                font-size: 0.9rem;
+            }
+            
+            .hero-visual {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .demo-visual {
+                padding: 1rem;
+            }
+            
+            .demo-item {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
             }
         }
 
@@ -605,37 +685,89 @@
             }
             
             .hero-content h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title {
                 font-size: 1.6rem;
             }
             
-            .comparison-card, .use-case-card, .example, .decision-card, .property-card {
-                padding: 1.5rem;
+            .section-title {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
             }
             
-            .hero-visual {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+            .comparison-card, .use-case-card, .example, .decision-card, .property-card {
+                padding: 1.2rem;
             }
             
             .footer-content {
                 flex-direction: column;
                 gap: 1.5rem;
             }
+            
+            .footer-section {
+                min-width: 100%;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.8rem;
+            }
+            
+            .code-demo {
+                padding: 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .feature-list li {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero-content h1 {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .comparison-card, .use-case-card, .example, .decision-card, .property-card {
+                padding: 1rem;
+            }
+            
+            .logo-img {
+                height: 50px;
+                width: 50px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Menu Overlay -->
+    <div class="overlay" id="overlay"></div>
+
     <!-- Header - Flexbox Example -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-layout logo-icon"></i>
-                    <div>
+                    <!-- Option 1: Circular Logo Image -->
+                    <img src="images/logo.png" alt="Flexbox vs Grid Logo" class="logo-img">
+                    <!-- Option 2: Icon Logo (commented out) -->
+                    <!-- <i class="fas fa-layout logo-icon"></i> -->
+                    <div class="logo-text">
                         <h1>Flexbox vs Grid</h1>
                         <p>Complete CSS Layout Guide</p>
                     </div>
@@ -810,9 +942,9 @@
                         }
                     </div>
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;">
-                        <div style="background: var(--primary-purple); color: white; padding: 2rem; border-radius: 6px; text-align: center;">Photo 1</div>
-                        <div style="background: var(--primary-purple); color: white; padding: 2rem; border-radius: 6px; text-align: center;">Photo 2</div>
-                        <div style="background: var(--primary-purple); color: white; padding: 2rem; border-radius: 6px; text-align: center;">Photo 3</div>
+                        <div style="background: var(--primary-purple); color: white; padding: 1.5rem; border-radius: 6px; text-align: center;">Photo 1</div>
+                        <div style="background: var(--primary-purple); color: white; padding: 1.5rem; border-radius: 6px; text-align: center;">Photo 2</div>
+                        <div style="background: var(--primary-purple); color: white; padding: 1.5rem; border-radius: 6px; text-align: center;">Photo 3</div>
                     </div>
                 </div>
 
@@ -980,15 +1112,37 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            document.getElementById('navMenu').classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navMenu').classList.remove('active');
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            const overlay = document.getElementById('overlay');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Toggle mobile menu
+            function toggleMobileMenu() {
+                navMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+            }
+            
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            
+            // Close mobile menu when clicking on a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    overlay.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // Close mobile menu when clicking on overlay
+            overlay.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
     </script>
