@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flexbox vs CSS Grid - Complete Guide</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ===========================
            CSS VARIABLES AND RESET
         =========================== */
         :root {
-            --primary-purple: #23C552;
-            --secondary-indigo: #23C552;
-            --accent-pink: #23C552;
+            --primary-green: #2E8B57;
+            --secondary-green: #90EE90;
+            --accent-green: #3CB371;
+            --light-green: #F0FFF0;
+            --pale-green: #F8FFF8;
+            --white: #ffffff;
             --light-gray: #f8fafc;
             --medium-gray: #e2e8f0;
             --dark-charcoal: #1e293b;
             --text-dark: #334155;
-            --white: #ffffff;
         }
 
         * {
@@ -48,7 +49,7 @@
            HEADER - USING FLEXBOX
         =========================== */
         header {
-            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-indigo));
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
             color: var(--white);
             padding: 1rem 0;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -71,13 +72,12 @@
             gap: 1rem;
         }
 
-        /* Circular Logo Styling */
         .logo-img {
             height: 60px;
             width: 60px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--accent-pink);
+            border: 3px solid var(--secondary-green);
             transition: transform 0.3s ease;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
             background-color: var(--white);
@@ -86,12 +86,7 @@
 
         .logo-img:hover {
             transform: scale(1.05) rotate(5deg);
-            box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
-        }
-
-        .logo-icon {
-            font-size: 2.5rem;
-            color: var(--accent-pink);
+            box-shadow: 0 4px 12px rgba(144, 238, 144, 0.3);
         }
 
         .logo-text h1 {
@@ -123,7 +118,7 @@
         }
 
         .nav-link:hover {
-            color: var(--accent-pink);
+            color: var(--secondary-green);
         }
 
         .nav-link::after {
@@ -133,7 +128,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: var(--accent-pink);
+            background-color: var(--secondary-green);
             transition: width 0.3s ease;
         }
 
@@ -168,7 +163,7 @@
 
         .hero-content h1 {
             font-size: 2.5rem;
-            color: var(--primary-purple);
+            color: var(--primary-green);
             margin-bottom: 1rem;
             line-height: 1.2;
         }
@@ -180,7 +175,7 @@
 
         .cta-button {
             display: inline-block;
-            background: var(--primary-purple);
+            background: var(--primary-green);
             color: var(--white);
             padding: 0.8rem 1.5rem;
             border-radius: 6px;
@@ -191,7 +186,7 @@
         }
 
         .cta-button:hover {
-            background: var(--secondary-indigo);
+            background: var(--accent-green);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
@@ -204,11 +199,11 @@
         }
 
         .grid-demo, .flex-demo {
-            background: var(--light-gray);
+            background: var(--light-green);
             padding: 1.5rem;
             border-radius: 12px;
             text-align: center;
-            border: 2px solid var(--medium-gray);
+            border: 2px solid var(--secondary-green);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -222,13 +217,13 @@
         =========================== */
         .comparison {
             padding: 3rem 0;
-            background: var(--light-gray);
+            background: var(--pale-green);
         }
 
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            color: var(--primary-purple);
+            color: var(--primary-green);
             margin-bottom: 2rem;
             position: relative;
         }
@@ -238,7 +233,7 @@
             display: block;
             width: 80px;
             height: 4px;
-            background: var(--accent-pink);
+            background: var(--accent-green);
             margin: 1rem auto;
             border-radius: 2px;
         }
@@ -277,7 +272,7 @@
 
         .card-icon {
             font-size: 2rem;
-            color: var(--accent-pink);
+            color: var(--accent-green);
         }
 
         .feature-list {
@@ -295,7 +290,7 @@
 
         .feature-list li:before {
             content: "✓";
-            color: var(--primary-purple);
+            color: var(--primary-green);
             font-weight: bold;
         }
 
@@ -325,10 +320,10 @@
         }
 
         .use-case-card {
-            background: var(--light-gray);
+            background: var(--light-green);
             padding: 1.5rem;
             border-radius: 12px;
-            border-left: 4px solid var(--primary-purple);
+            border-left: 4px solid var(--primary-green);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             height: 100%;
         }
@@ -343,7 +338,7 @@
         =========================== */
         .examples {
             padding: 3rem 0;
-            background: var(--light-gray);
+            background: var(--pale-green);
         }
 
         .example-container {
@@ -369,7 +364,7 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            background: var(--light-gray);
+            background: var(--light-green);
             padding: 1.5rem;
             border-radius: 8px;
             margin-top: 1rem;
@@ -378,7 +373,7 @@
         }
 
         .demo-item {
-            background: var(--primary-purple);
+            background: var(--primary-green);
             color: var(--white);
             padding: 0.8rem 1.5rem;
             border-radius: 6px;
@@ -402,7 +397,7 @@
         .decision-card {
             text-align: center;
             padding: 1.5rem;
-            background: var(--light-gray);
+            background: var(--light-green);
             border-radius: 12px;
             display: flex;
             flex-direction: column;
@@ -422,7 +417,7 @@
         =========================== */
         .properties {
             padding: 3rem 0;
-            background: var(--light-gray);
+            background: var(--pale-green);
         }
 
         .properties-grid {
@@ -481,12 +476,12 @@
         }
 
         .support-table th {
-            background: var(--primary-purple);
+            background: var(--primary-green);
             color: var(--white);
         }
 
         .support-table tr:nth-child(even) {
-            background: var(--light-gray);
+            background: var(--light-green);
         }
 
         .support-good {
@@ -547,7 +542,7 @@
         }
 
         .social-link:hover {
-            background: var(--accent-pink);
+            background: var(--accent-green);
             transform: translateY(-2px);
         }
 
@@ -575,6 +570,31 @@
 
         .overlay.active {
             display: block;
+        }
+
+        /* ===========================
+           DEPARTMENT BUTTON
+        =========================== */
+        .department-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--secondary-green);
+            color: var(--primary-green);
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            border: 2px solid var(--primary-green);
+        }
+
+        .department-btn:hover {
+            background: var(--primary-green);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         /* ===========================
@@ -619,7 +639,7 @@
                 width: 80%;
                 max-width: 300px;
                 height: 100vh;
-                background: var(--secondary-indigo);
+                background: var(--primary-green);
                 padding-top: 5rem;
                 transition: left 0.3s ease;
                 z-index: 99;
@@ -763,10 +783,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <!-- Option 1: Circular Logo Image -->
-                    <img src="images/logo.png" alt="Flexbox vs Grid Logo" class="logo-img">
-                    <!-- Option 2: Icon Logo (commented out) -->
-                    <!-- <i class="fas fa-layout logo-icon"></i> -->
+                    <img src="https://via.placeholder.com/60" alt="Flexbox vs Grid Logo" class="logo-img">
                     <div class="logo-text">
                         <h1>Flexbox vs Grid</h1>
                         <p>Complete CSS Layout Guide</p>
@@ -796,15 +813,18 @@
                     <p>Understand the fundamental differences between Flexbox and CSS Grid, and learn when to use each for optimal web layouts.</p>
                     <p>Both are powerful CSS layout systems, but they serve different purposes and excel in different scenarios.</p>
                     <a href="#comparison" class="cta-button">Start Learning</a>
+                    <a href="https://seniorsirraphael.github.io/project" class="department-btn">
+                        <i class="fas fa-arrow-left"></i> Back to Department
+                    </a>
                 </div>
                 <div class="hero-visual">
                     <div class="grid-demo">
-                        <i class="fas fa-grid fa-3x" style="color: var(--primary-purple);"></i>
+                        <i class="fas fa-grid fa-3x" style="color: var(--primary-green);"></i>
                         <h3>CSS Grid</h3>
                         <p>2D Layout System</p>
                     </div>
                     <div class="flex-demo">
-                        <i class="fas fa-bars fa-3x" style="color: var(--accent-pink);"></i>
+                        <i class="fas fa-bars fa-3x" style="color: var(--accent-green);"></i>
                         <h3>Flexbox</h3>
                         <p>1D Layout System</p>
                     </div>
@@ -942,9 +962,9 @@
                         }
                     </div>
                     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;">
-                        <div style="background: var(--primary-purple); color: white; padding: 1.5rem; border-radius: 6px; text-align: center;">Photo 1</div>
-                        <div style="background: var(--primary-purple); color: white; padding: 1.5rem; border-radius: 6px; text-align: center;">Photo 2</div>
-                        <div style="background: var(--primary-purple); color: white; padding: 1.5rem; border-radius: 6px; text-align: center;">Photo 3</div>
+                        <div style="background: var(--primary-green); color: white; padding: 1.5rem; border-radius: 6px; text-align: center;">Photo 1</div>
+                        <div style="background: var(--primary-green); color: white; padding: 1.5rem; border-radius: 6px; text-align: center;">Photo 2</div>
+                        <div style="background: var(--primary-green); color: white; padding: 1.5rem; border-radius: 6px; text-align: center;">Photo 3</div>
                     </div>
                 </div>
 
@@ -959,12 +979,12 @@
                         }
                     </div>
                     <div class="demo-visual" style="flex-direction: column; padding: 1.5rem;">
-                        <div style="background: var(--accent-pink); color: white; padding: 1rem; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                        <div style="background: var(--accent-green); color: white; padding: 1rem; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
                             <i class="fas fa-user"></i>
                         </div>
                         <h4 style="margin-bottom: 0.5rem;">User Profile</h4>
                         <p style="margin-bottom: 1rem;">This is a user profile card with centered content using Flexbox.</p>
-                        <button style="background: var(--primary-purple); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px;">View Profile</button>
+                        <button style="background: var(--primary-green); color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px;">View Profile</button>
                     </div>
                 </div>
             </div>
@@ -1061,20 +1081,25 @@
             <h2 class="section-title">Quick Decision Guide</h2>
             <div class="decision-grid">
                 <div class="decision-card">
-                    <i class="fas fa-bars fa-2x" style="color: var(--accent-pink);"></i>
+                    <i class="fas fa-bars fa-2x" style="color: var(--accent-green);"></i>
                     <h3>Choose Flexbox When:</h3>
                     <p>You need to align items in one direction (row OR column)</p>
                 </div>
                 <div class="decision-card">
-                    <i class="fas fa-grid fa-2x" style="color: var(--primary-purple);"></i>
+                    <i class="fas fa-grid fa-2x" style="color: var(--primary-green);"></i>
                     <h3>Choose Grid When:</h3>
                     <p>You need control over both rows AND columns simultaneously</p>
                 </div>
                 <div class="decision-card">
-                    <i class="fas fa-sync fa-2x" style="color: var(--secondary-indigo);"></i>
+                    <i class="fas fa-sync fa-2x" style="color: var(--secondary-green);"></i>
                     <h3>Use Both When:</h3>
                     <p>Building complex layouts with nested components</p>
                 </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://seniorsirraphael.github.io/project" class="department-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Department Page
+                </a>
             </div>
         </div>
     </section>
