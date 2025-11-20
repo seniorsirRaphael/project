@@ -3,28 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Department of Computer - Egerton University</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Department of Computer and Applied Computer Science - Egerton University</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ===========================
            CSS VARIABLES AND RESET
         =========================== */
         :root {
-            /* Color Palette */
-            --primary-blue: #f8fff8;
-            --secondary-blue: #004080;
-            --accent-gold: #f0fff0;
-            --light-gray: #F8F9FA;
-            --medium-gray: #E9ECEF;
-            --dark-gray: #343A40;
-            --text-dark: #212529;
-            --text-light: #2e8b57;
+            /* Color Palette - Light Green, Pale Green, White */
+            --primary-green: #2E8B57;      /* Sea Green */
+            --secondary-green: #90EE90;    /* Light Green */
+            --pale-green: #F0FFF0;         /* Honeydew */
+            --light-green: #98FB98;        /* Pale Green */
+            --accent-green: #3CB371;       /* Medium Sea Green */
             --white: #FFFFFF;
-            --success: #28A745;
-            --warning: #FFC107;
-            --danger: #DC3545;
-            --info: #17A2B8;
+            --light-gray: #F8F9FA;
+            --text-dark: #2F4F4F;
+            --text-light: #708090;
             
             /* Typography */
             --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -46,13 +41,6 @@
             --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
             --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
             --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
-            --shadow-xl: 0 12px 24px rgba(0,0,0,0.25);
-            --shadow-gold: 0 4px 12px rgba(212, 175, 55, 0.3);
-            
-            /* Transitions */
-            --transition-fast: 0.2s ease;
-            --transition-normal: 0.3s ease;
-            --transition-slow: 0.5s ease;
         }
 
         * {
@@ -69,7 +57,7 @@
             font-family: var(--font-primary);
             line-height: 1.7;
             color: var(--text-dark);
-            background-color: var(--light-gray);
+            background-color: var(--white);
             overflow-x: hidden;
         }
 
@@ -81,7 +69,7 @@
             font-weight: 700;
             line-height: 1.3;
             margin-bottom: var(--space-sm);
-            color: var(--primary-blue);
+            color: var(--primary-green);
         }
 
         h1 {
@@ -90,7 +78,7 @@
 
         h2 {
             font-size: 2rem;
-            border-left: 4px solid var(--accent-gold);
+            border-left: 4px solid var(--secondary-green);
             padding-left: var(--space-sm);
             margin-bottom: var(--space-lg);
         }
@@ -104,13 +92,13 @@
         }
 
         a {
-            color: var(--secondary-blue);
+            color: var(--primary-green);
             text-decoration: none;
-            transition: color var(--transition-fast);
+            transition: color 0.3s ease;
         }
 
         a:hover {
-            color: var(--accent-gold);
+            color: var(--accent-green);
         }
 
         /* ===========================
@@ -125,25 +113,18 @@
 
         .section {
             padding: var(--space-xl) 0;
-            display: none;
-        }
-
-        .section.active {
-            display: block;
-            animation: fadeIn 0.8s ease;
-        }
-
-        .section-dark {
-            background-color: var(--primary-blue);
-            color: var(--white);
         }
 
         .section-light {
             background-color: var(--white);
         }
 
-        .section-accent {
-            background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+        .section-pale {
+            background-color: var(--pale-green);
+        }
+
+        .section-green {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
             color: var(--white);
         }
 
@@ -151,7 +132,7 @@
            HEADER AND NAVIGATION
         =========================== */
         header {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
             color: var(--white);
             padding: var(--space-md) 0;
             position: sticky;
@@ -172,22 +153,19 @@
             gap: var(--space-sm);
         }
 
-        /* Circular Logo Styling */
         .logo-img {
             height: 60px;
             width: 60px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--accent-gold);
-            transition: transform var(--transition-normal);
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            border: 3px solid var(--secondary-green);
+            transition: transform 0.3s ease;
             background-color: var(--white);
             padding: 5px;
         }
 
         .logo-img:hover {
-            transform: scale(1.05) rotate(5deg);
-            box-shadow: var(--shadow-gold);
+            transform: scale(1.05);
         }
 
         .logo-text h1 {
@@ -218,32 +196,14 @@
             color: var(--white);
             padding: var(--space-xs) var(--space-sm);
             border-radius: var(--radius-sm);
-            transition: all var(--transition-normal);
+            transition: all 0.3s ease;
             position: relative;
             font-weight: 500;
-            cursor: pointer;
         }
 
         .nav-link:hover, .nav-link.active {
             background-color: rgba(255, 255, 255, 0.1);
-            color: var(--accent-gold);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--accent-gold);
-            transition: all var(--transition-normal);
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 80%;
+            color: var(--secondary-green);
         }
 
         .mobile-menu-btn {
@@ -254,26 +214,20 @@
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 1001;
-            transition: transform var(--transition-normal);
-        }
-
-        .mobile-menu-btn:hover {
-            transform: scale(1.1);
         }
 
         /* ===========================
            HERO SECTION
         =========================== */
         .hero {
-            background: linear-gradient(rgba(0, 39, 77, 0.85), rgba(0, 64, 128, 0.85)), 
-                        url('images/hero-background.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(46, 139, 87, 0.85), rgba(60, 179, 113, 0.85)), 
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80') center/cover no-repeat;
             color: var(--white);
             text-align: center;
             padding: var(--space-xl) 0;
             min-height: 70vh;
             display: flex;
             align-items: center;
-            position: relative;
         }
 
         .hero-content {
@@ -285,7 +239,6 @@
             font-size: 3rem;
             margin-bottom: var(--space-md);
             color: var(--white);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
@@ -297,53 +250,33 @@
         .btn {
             display: inline-block;
             padding: var(--space-sm) var(--space-lg);
-            background: var(--accent-gold);
-            color: var(--primary-blue);
+            background: var(--secondary-green);
+            color: var(--primary-green);
             border: none;
             border-radius: var(--radius-md);
             font-weight: 600;
             cursor: pointer;
-            transition: all var(--transition-normal);
+            transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
             box-shadow: var(--shadow-md);
-            position: relative;
-            overflow: hidden;
         }
 
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
-            background: #e6c12e;
-        }
-
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            border-radius: 100%;
-            transform: scale(1, 1) translate(-50%);
-            transform-origin: 50% 50%;
-        }
-
-        .btn:hover::after {
-            animation: ripple 1s ease-out;
+            background: var(--light-green);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--accent-gold);
-            color: var(--accent-gold);
+            border: 2px solid var(--secondary-green);
+            color: var(--secondary-green);
         }
 
         .btn-outline:hover {
-            background: var(--accent-gold);
-            color: var(--primary-blue);
+            background: var(--secondary-green);
+            color: var(--primary-green);
         }
 
         /* ===========================
@@ -354,9 +287,8 @@
             border-radius: var(--radius-md);
             overflow: hidden;
             box-shadow: var(--shadow-sm);
-            transition: all var(--transition-normal);
+            transition: all 0.3s ease;
             height: 100%;
-            position: relative;
         }
 
         .card:hover {
@@ -368,11 +300,6 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            transition: transform var(--transition-slow);
-        }
-
-        .card:hover .card-img {
-            transform: scale(1.05);
         }
 
         .card-content {
@@ -382,10 +309,10 @@
         .card-title {
             font-size: 1.3rem;
             margin-bottom: var(--space-xs);
-            color: var(--primary-blue);
+            color: var(--primary-green);
         }
 
-        /* Grid layouts for responsive design */
+        /* Grid layouts */
         .grid {
             display: grid;
             gap: var(--space-md);
@@ -418,34 +345,12 @@
             background: var(--white);
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-sm);
-            transition: all var(--transition-normal);
+            transition: all 0.3s ease;
         }
 
         .flex-item:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-md);
-        }
-
-        /* Nested flexbox example */
-        .nested-flex {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-sm);
-        }
-
-        .nested-flex-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            padding: var(--space-sm);
-            background: var(--light-gray);
-            border-radius: var(--radius-sm);
-            transition: all var(--transition-fast);
-        }
-
-        .nested-flex-item:hover {
-            background: var(--medium-gray);
-            transform: translateX(5px);
         }
 
         /* ===========================
@@ -454,7 +359,6 @@
         .staff-card {
             text-align: center;
             padding: var(--space-md);
-            position: relative;
         }
 
         .staff-img {
@@ -462,15 +366,13 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--accent-gold);
+            border: 4px solid var(--secondary-green);
             margin: 0 auto var(--space-sm);
-            transition: all var(--transition-normal);
-            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
         }
 
         .staff-card:hover .staff-img {
             transform: scale(1.05);
-            box-shadow: var(--shadow-gold);
         }
 
         .staff-name {
@@ -482,25 +384,6 @@
             color: var(--text-light);
             font-size: 0.9rem;
             margin-bottom: var(--space-sm);
-        }
-
-        .staff-contact {
-            margin-top: var(--space-sm);
-            font-size: 0.9rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-xs);
-            margin-top: var(--space-sm);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-xs);
         }
 
         /* ===========================
@@ -516,11 +399,11 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 39, 77, 0.85);
+            background: rgba(46, 139, 87, 0.85);
             color: var(--white);
             padding: var(--space-md);
             transform: translateY(100%);
-            transition: transform var(--transition-normal);
+            transition: transform 0.3s ease;
         }
 
         .facility-card:hover .facility-overlay {
@@ -531,18 +414,16 @@
            RESEARCH SECTION
         =========================== */
         .research-area {
-            background: var(--light-gray);
-            border-left: 4px solid var(--info);
+            background: var(--pale-green);
+            border-left: 4px solid var(--accent-green);
             padding: var(--space-md);
             margin-bottom: var(--space-md);
-            transition: all var(--transition-normal);
-            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
         }
 
         .research-area:hover {
-            background: var(--white);
+            background: var(--light-green);
             transform: translateX(5px);
-            box-shadow: var(--shadow-md);
         }
 
         /* ===========================
@@ -561,69 +442,23 @@
         input, textarea, select {
             width: 100%;
             padding: var(--space-sm);
-            border: 1px solid var(--medium-gray);
+            border: 1px solid #ddd;
             border-radius: var(--radius-sm);
             font-family: inherit;
-            transition: all var(--transition-fast);
+            transition: all 0.3s ease;
         }
 
         input:focus, textarea:focus, select:focus {
             outline: none;
-            border-color: var(--secondary-blue);
-            box-shadow: 0 0 0 3px rgba(0, 64, 128, 0.1);
-        }
-
-        /* ===========================
-           POSITIONING EXAMPLES
-        =========================== */
-        .position-container {
-            position: relative;
-            height: 300px;
-            background: var(--light-gray);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            margin-bottom: var(--space-lg);
-        }
-
-        .position-absolute {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--accent-gold);
-            color: var(--primary-blue);
-            padding: var(--space-md);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-lg);
-            text-align: center;
-        }
-
-        .position-relative {
-            position: relative;
-            padding: var(--space-md);
-            background: var(--white);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            margin-top: var(--space-lg);
-        }
-
-        .position-relative::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: var(--accent-gold);
-            border-radius: 50%;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(144, 238, 144, 0.3);
         }
 
         /* ===========================
            FOOTER
         =========================== */
         footer {
-            background: var(--dark-gray);
+            background: var(--text-dark);
             color: var(--white);
             padding: var(--space-xl) 0 var(--space-md);
         }
@@ -636,7 +471,7 @@
         }
 
         .footer-section h3 {
-            color: var(--accent-gold);
+            color: var(--secondary-green);
             border-left: none;
             padding-left: 0;
             margin-bottom: var(--space-md);
@@ -652,12 +487,11 @@
 
         .footer-links a {
             color: #adb5bd;
-            transition: color var(--transition-fast);
-            cursor: pointer;
+            transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: var(--accent-gold);
+            color: var(--secondary-green);
         }
 
         .social-links {
@@ -674,12 +508,12 @@
             height: 40px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            transition: all var(--transition-normal);
+            transition: all 0.3s ease;
         }
 
         .social-link:hover {
-            background: var(--accent-gold);
-            color: var(--primary-blue);
+            background: var(--secondary-green);
+            color: var(--primary-green);
             transform: translateY(-3px);
         }
 
@@ -694,26 +528,6 @@
         /* ===========================
            ANIMATIONS AND EFFECTS
         =========================== */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes ripple {
-            0% {
-                transform: scale(0, 0);
-                opacity: 1;
-            }
-            20% {
-                transform: scale(25, 25);
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: scale(40, 40);
-            }
-        }
-
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -723,35 +537,6 @@
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* ===========================
-           TEXT CONTRAST IMPROVEMENTS
-        =========================== */
-        .text-contrast {
-            color: var(--text-dark);
-            background: rgba(255, 255, 255, 0.9);
-            padding: var(--space-sm);
-            border-radius: var(--radius-sm);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .dark-text {
-            color: var(--text-dark) !important;
-        }
-
-        .light-text {
-            color: var(--white) !important;
         }
 
         /* ===========================
@@ -778,14 +563,14 @@
                 width: 80%;
                 max-width: 300px;
                 height: 100vh;
-                background: var(--primary-blue);
+                background: var(--primary-green);
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-start;
                 padding-top: var(--space-xl);
                 transition: left 0.3s ease;
                 z-index: 999;
-                box-shadow: var(--shadow-xl);
+                box-shadow: var(--shadow-lg);
             }
             
             .nav-menu.active {
@@ -805,10 +590,6 @@
             
             .grid-3, .grid-4 {
                 grid-template-columns: 1fr;
-            }
-            
-            .header-content {
-                position: relative;
             }
         }
 
@@ -843,35 +624,38 @@
         }
 
         /* ===========================
-           MOBILE MENU OVERLAY
+           FLEXBOX AND GRID SECTION
         =========================== */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 998;
+        .flexbox-grid-section {
+            background-color: var(--pale-green);
         }
 
-        .overlay.active {
-            display: block;
+        .layout-card {
+            background-color: var(--white);
+            border-left: 4px solid var(--light-green);
+        }
+
+        .layout-card .card-title {
+            color: var(--primary-green);
+        }
+
+        .layout-btn {
+            background-color: var(--light-green);
+            color: var(--primary-green);
+        }
+
+        .layout-btn:hover {
+            background-color: var(--secondary-green);
         }
     </style>
 </head>
 <body>
-    <!-- Mobile Menu Overlay -->
-    <div class="overlay" id="overlay"></div>
-
     <!-- Header Section -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <!-- Using local logo image -->
-                    <img src="images/egertonlogo.png" alt="Egerton University Logo" class="logo-img">
+                    <img src="https://via.placeholder.com/60" alt="Egerton University Logo" class="logo-img">
                     <div class="logo-text">
                         <h1>Egerton University</h1>
                         <p>Department of Computer Science</p>
@@ -883,14 +667,13 @@
                         <i class="fas fa-bars"></i>
                     </button>
                     <ul class="nav-menu" id="navMenu">
-                        <li><a class="nav-link active" data-section="home">Home</a></li>
-                        <li><a class="nav-link" data-section="about">About</a></li>
-                        <li><a class="nav-link" data-section="programs">Programs</a></li>
-                        <li><a class="nav-link" data-section="staff">Staff</a></li>
-                        <li><a class="nav-link" data-section="research">Research</a></li>
-                        <li><a class="nav-link" data-section="facilities">Facilities</a></li>
-                        <li><a class="nav-link" data-section="developers">Developers</a></li>
-                        <li><a class="nav-link" data-section="contact">Contact</a></li>
+                        <li><a class="nav-link active" href="#home">Home</a></li>
+                        <li><a class="nav-link" href="#about">About</a></li>
+                        <li><a class="nav-link" href="#programs">Programs</a></li>
+                        <li><a class="nav-link" href="#staff">Staff</a></li>
+                        <li><a class="nav-link" href="#research">Research</a></li>
+                        <li><a class="nav-link" href="#facilities">Facilities</a></li>
+                        <li><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -898,15 +681,15 @@
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="section active">
+    <section id="home" class="section">
         <div class="hero">
             <div class="container">
                 <div class="hero-content fade-in">
                     <h1>Advancing Computer Science Education and Research</h1>
                     <p>Join us at Egerton University's Department of Computer and Applied Computer Science, where we nurture innovation, research excellence, and technological leadership for a digital future.</p>
                     <div class="hero-buttons">
-                        <a class="btn" data-section="programs">Explore Programs</a>
-                        <a class="btn btn-outline" data-section="contact">Contact Us</a>
+                        <a class="btn" href="#programs">Explore Programs</a>
+                        <a class="btn btn-outline" href="#contact">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -923,16 +706,16 @@
                         <p>The Department of Computer and Applied Computer Science at Egerton University is a center of excellence in computing education, research, and innovation. Our programs are designed to equip students with the knowledge and skills needed to excel in the rapidly evolving field of computer science.</p>
                         
                         <!-- Nested flexbox example -->
-                        <div class="nested-flex">
-                            <div class="nested-flex-item">
+                        <div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-md);">
+                            <div style="display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm); background: var(--pale-green); border-radius: var(--radius-sm);">
                                 <i class="fas fa-graduation-cap"></i>
                                 <span>Quality Education</span>
                             </div>
-                            <div class="nested-flex-item">
+                            <div style="display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm); background: var(--pale-green); border-radius: var(--radius-sm);">
                                 <i class="fas fa-flask"></i>
                                 <span>Research Excellence</span>
                             </div>
-                            <div class="nested-flex-item">
+                            <div style="display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm); background: var(--pale-green); border-radius: var(--radius-sm);">
                                 <i class="fas fa-handshake"></i>
                                 <span>Industry Partnerships</span>
                             </div>
@@ -942,67 +725,13 @@
                         <h3>Our Commitment</h3>
                         <p>We are dedicated to providing quality education that combines theoretical knowledge with practical applications, preparing students for successful careers in technology. With state-of-the-art facilities, experienced faculty, and strong industry partnerships, we provide an environment that fosters academic excellence and professional growth.</p>
                         <div class="card">
-                            <!-- Using local image -->
-                            <img src="images/students-collaborating.jpg" alt="Students collaborating" class="card-img">
+                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Students collaborating" class="card-img">
                             <div class="card-content">
                                 <p>Our students work on real-world projects that prepare them for the tech industry.</p>
-                                <!-- Add this section to the home page, after the existing content -->
-<div class="section section-light" style="background-color: #f8fff8;">
-    <div class="container">
-        <h2 style="color: #2e8b57;">CSS Layout Systems: Flexbox & Grid</h2>
-        
-        <div class="grid grid-2">
-            <div class="fade-in">
-                <div class="card" style="background-color: #f0fff0; border-left: 4px solid #90ee90;">
-                    <div class="card-content">
-                        <h3 class="card-title" style="color: #2e8b57;">Flexbox Layout System</h3>
-                        <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns. It provides an efficient way to distribute space and align items in a container, even when their size is unknown or dynamic.</p>
-                        <p>Key features of Flexbox include:</p>
-                        <ul>
-                            <li>Flexible item alignment and distribution</li>
-                            <li>Responsive design without media queries</li>
-                            <li>Easy vertical and horizontal centering</li>
-                            <li>Order control of elements</li>
-                        </ul>
-                        <a href="https://seniorsirraphael.github.io/project/flexbox" class="btn" style="background-color: #98fb98; color: #2e8b57; margin-top: var(--space-sm);">Read More About Flexbox</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="fade-in">
-                <div class="card" style="background-color: #f0fff0; border-left: 4px solid #90ee90;">
-                    <div class="card-content">
-                        <h3 class="card-title" style="color: #2e8b57;">CSS Grid Layout System</h3>
-                        <p>CSS Grid is a two-dimensional layout system that allows you to create complex web layouts with rows and columns. It provides precise control over both the horizontal and vertical alignment of elements.</p>
-                        <p>Key features of CSS Grid include:</p>
-                        <ul>
-                            <li>Two-dimensional layouts (rows and columns)</li>
-                            <li>Precise placement of items</li>
-                            <li>Responsive grid templates</li>
-                            <li>Overlapping content control</li>
-                        </ul>
-                        <a href="https://seniorsirraphael.github.io/project/flexbox" class="btn" style="background-color: #98fb98; color: #2e8b57; margin-top: var(--space-sm);">Read More About Grids</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="fade-in" style="margin-top: var(--space-lg);">
-            <div class="card" style="background-color: #f0fff0; border-left: 4px solid #90ee90;">
-                <div class="card-content">
-                    <h3 class="card-title" style="color: #2e8b57;">Modern Web Layout Techniques</h3>
-                    <p>Both Flexbox and CSS Grid are essential tools in modern web development. While Flexbox excels at one-dimensional layouts, CSS Grid provides powerful capabilities for two-dimensional layouts. Many modern websites use a combination of both to create responsive, maintainable designs.</p>
-                    <p>Understanding when to use each layout system is key to creating efficient and visually appealing web interfaces that work across different screen sizes and devices.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
                             </div>
                         </div>
                     </div>
                 </div>
-               
                 
                 <!-- Grid example -->
                 <div class="grid grid-3">
@@ -1027,6 +756,59 @@
                 </div>
             </div>
         </div>
+
+        <!-- Flexbox and Grid Section -->
+        <div class="section flexbox-grid-section">
+            <div class="container">
+                <h2 style="color: var(--primary-green);">CSS Layout Systems: Flexbox & Grid</h2>
+                
+                <div class="grid grid-2">
+                    <div class="fade-in">
+                        <div class="card layout-card">
+                            <div class="card-content">
+                                <h3 class="card-title">Flexbox Layout System</h3>
+                                <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns. It provides an efficient way to distribute space and align items in a container, even when their size is unknown or dynamic.</p>
+                                <p>Key features of Flexbox include:</p>
+                                <ul>
+                                    <li>Flexible item alignment and distribution</li>
+                                    <li>Responsive design without media queries</li>
+                                    <li>Easy vertical and horizontal centering</li>
+                                    <li>Order control of elements</li>
+                                </ul>
+                                <a href="https://seniorsirraphael.github.io/project/flexbox" class="btn layout-btn" style="margin-top: var(--space-sm);">Read More About Flexbox</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fade-in">
+                        <div class="card layout-card">
+                            <div class="card-content">
+                                <h3 class="card-title">CSS Grid Layout System</h3>
+                                <p>CSS Grid is a two-dimensional layout system that allows you to create complex web layouts with rows and columns. It provides precise control over both the horizontal and vertical alignment of elements.</p>
+                                <p>Key features of CSS Grid include:</p>
+                                <ul>
+                                    <li>Two-dimensional layouts (rows and columns)</li>
+                                    <li>Precise placement of items</li>
+                                    <li>Responsive grid templates</li>
+                                    <li>Overlapping content control</li>
+                                </ul>
+                                <a href="https://seniorsirraphael.github.io/project/flexbox" class="btn layout-btn" style="margin-top: var(--space-sm);">Read More About Grids</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fade-in" style="margin-top: var(--space-lg);">
+                    <div class="card layout-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Modern Web Layout Techniques</h3>
+                            <p>Both Flexbox and CSS Grid are essential tools in modern web development. While Flexbox excels at one-dimensional layouts, CSS Grid provides powerful capabilities for two-dimensional layouts. Many modern websites use a combination of both to create responsive, maintainable designs.</p>
+                            <p>Understanding when to use each layout system is key to creating efficient and visually appealing web interfaces that work across different screen sizes and devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -1043,37 +825,14 @@
                     
                     <h3>Mission</h3>
                     <p>To provide quality education in computing and information technology, conduct innovative research that addresses societal challenges, and produce graduates who can solve real-world problems using technology.</p>
-                    
-                    <!-- Position relative example -->
-                    <div class="position-relative">
-                        <h3>Core Values</h3>
-                        <ul>
-                            <li>Excellence in teaching, research, and service</li>
-                            <li>Innovation and creativity in problem-solving</li>
-                            <li>Integrity and ethical conduct</li>
-                            <li>Collaboration and teamwork</li>
-                            <li>Professionalism and commitment to lifelong learning</li>
-                        </ul>
-                    </div>
                 </div>
                 <div class="fade-in">
                     <div class="card">
-                        <!-- Using local image -->
-                        <img src="images/department-building.jpg" alt="Department Building" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1562813733-b31f71025d54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Department Building" class="card-img">
                         <div class="card-content">
-                            <h3 class="card-title">Message from the Chair of Department</h3>
-                            <p>"Welcome to the Department of Computer Science. We are committed to equipping students with practical skills, research experience, and the knowledge necessary to thrive in the digital economy. Our faculty members are dedicated to providing a stimulating learning environment that fosters innovation and critical thinking."</p>
+                            <h3 class="card-title">Message from the Head of Department</h3>
+                            <p>"Welcome to the Department of Computer and Applied Computer Science. We are committed to equipping students with practical skills, research experience, and the knowledge necessary to thrive in the digital economy. Our faculty members are dedicated to providing a stimulating learning environment that fosters innovation and critical thinking."</p>
                             <p><strong>— Dr. Zachary O. Bosire, Head of Department</strong></p>
-                        </div>
-                    </div>
-                    
-                    <!-- Position absolute example -->
-                    <div class="position-container">
-                        <!-- Using local image -->
-                        <img src="images/campus-view.jpg" alt="Campus View" style="width: 100%; height: 100%; object-fit: cover;">
-                        <div class="position-absolute">
-                            <h3>Visit Our Campus</h3>
-                            <p>Experience our state-of-the-art facilities</p>
                         </div>
                     </div>
                 </div>
@@ -1082,50 +841,50 @@
     </section>
 
     <!-- Programs Section -->
-    <section id="programs" class="section section-dark">
+    <section id="programs" class="section section-green">
         <div class="container">
-            <h2 class="light-text">Academic Programs</h2>
+            <h2 style="color: var(--white); border-left-color: var(--secondary-green);">Academic Programs</h2>
             <div class="grid grid-3">
                 <div class="card fade-in">
                     <div class="card-content">
                         <h3 class="card-title">BSc Computer Science</h3>
-                        <p class="dark-text">A comprehensive four-year program covering programming, algorithms, software engineering, networking, databases, and artificial intelligence. Students engage in hands-on labs, industry attachments, and a final year project to apply their knowledge.</p>
+                        <p>A comprehensive four-year program covering programming, algorithms, software engineering, networking, databases, and artificial intelligence. Students engage in hands-on labs, industry attachments, and a final year project to apply their knowledge.</p>
                         <h4>Career Opportunities</h4>
-                        <ul class="dark-text">
+                        <ul>
                             <li>Software Developer</li>
                             <li>Systems Analyst</li>
                             <li>Database Administrator</li>
                             <li>Network Engineer</li>
                         </ul>
-                        <a class="btn btn-outline" style="margin-top: var(--space-sm);">Program Details</a>
+                        <a class="btn layout-btn" style="margin-top: var(--space-sm);">Program Details</a>
                     </div>
                 </div>
                 <div class="card fade-in">
                     <div class="card-content">
                         <h3 class="card-title">BSc Applied Computer Science</h3>
-                        <p class="dark-text">Focuses on the application of computing in real-world settings, integrating programming, database systems, information management, and applied technologies to solve societal and industrial challenges.</p>
+                        <p>Focuses on the application of computing in real-world settings, integrating programming, database systems, information management, and applied technologies to solve societal and industrial challenges.</p>
                         <h4>Career Opportunities</h4>
-                        <ul class="dark-text">
+                        <ul>
                             <li>IT Consultant</li>
                             <li>Applications Developer</li>
                             <li>Business Analyst</li>
                             <li>IT Project Manager</li>
                         </ul>
-                        <a class="btn btn-outline" style="margin-top: var(--space-sm);">Program Details</a>
+                        <a class="btn layout-btn" style="margin-top: var(--space-sm);">Program Details</a>
                     </div>
                 </div>
                 <div class="card fade-in">
                     <div class="card-content">
                         <h3 class="card-title">MSc Programs</h3>
-                        <p class="dark-text">Advanced training in computer science with research opportunities in AI, cybersecurity, data science, and software engineering. Focused on applied research and practical implementation of computing solutions across industries.</p>
+                        <p>Advanced training in computer science with research opportunities in AI, cybersecurity, data science, and software engineering. Focused on applied research and practical implementation of computing solutions across industries.</p>
                         <h4>Specializations</h4>
-                        <ul class="dark-text">
+                        <ul>
                             <li>Artificial Intelligence</li>
                             <li>Data Science</li>
                             <li>Cybersecurity</li>
                             <li>Software Engineering</li>
                         </ul>
-                        <a class="btn btn-outline" style="margin-top: var(--space-sm);">Program Details</a>
+                        <a class="btn layout-btn" style="margin-top: var(--space-sm);">Program Details</a>
                     </div>
                 </div>
             </div>
@@ -1140,24 +899,19 @@
             <h3>Head of Department</h3>
             <div class="grid grid-2 fade-in">
                 <div class="staff-card card">
-                    <!-- Using local image -->
-                    <img src="images/staff/dr-bosire.jpg" alt="Dr. Zachary O. Bosire" class="staff-img">
+                    <img src="https://via.placeholder.com/150" alt="Dr. Zachary O. Bosire" class="staff-img">
                     <h3 class="staff-name">Dr. Zachary O. Bosire</h3>
                     <p class="staff-role">Head of Department</p>
                     <p>Provides academic leadership and strategic direction for the department. His research focuses on advancing computer science education and research that addresses both local and global challenges.</p>
                     <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
+                        <div style="display: flex; flex-direction: column; gap: var(--space-xs); margin-top: var(--space-sm);">
+                            <div style="display: flex; align-items: center; gap: var(--space-xs);">
                                 <i class="fas fa-envelope"></i>
                                 <span>z.bosire@egerton.ac.ke</span>
                             </div>
-                            <div class="contact-item">
+                            <div style="display: flex; align-items: center; gap: var(--space-xs);">
                                 <i class="fas fa-phone"></i>
                                 <span>+254 722 123 456</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-building"></i>
-                                <span>Room One, Faculty Of Science Building</span>
                             </div>
                         </div>
                     </div>
@@ -1167,145 +921,46 @@
             <h3>Academic Staff</h3>
             <div class="grid grid-3">
                 <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/staff/dr-ongalo.jpg" alt="Dr. Phoebe N. Ongalo" class="staff-img">
+                    <img src="https://via.placeholder.com/150" alt="Dr. Phoebe N. Ongalo" class="staff-img">
                     <h3 class="staff-name">Dr. Phoebe N. Ongalo</h3>
                     <p class="staff-role">Senior Lecturer – Software Engineering</p>
                     <p>Specializes in software engineering, system architecture, and agile development methodologies.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>p.ongalo@egerton.ac.ke</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 722 234 567</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/staff/dr-odongo.jpg" alt="Dr. George Y. Odongo" class="staff-img">
+                    <img src="https://via.placeholder.com/150" alt="Dr. George Y. Odongo" class="staff-img">
                     <h3 class="staff-name">Dr. George Y. Odongo</h3>
                     <p class="staff-role">Lecturer – Data Science & Analytics</p>
                     <p>Expert in data science, machine learning, and business analytics with extensive industry experience.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>g.odongo@egerton.ac.ke</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 722 345 678</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/staff/dr-kemoi.jpg" alt="Dr. Peter K. Kemoi" class="staff-img">
+                    <img src="https://via.placeholder.com/150" alt="Dr. Peter K. Kemoi" class="staff-img">
                     <h3 class="staff-name">Dr. Peter K. Kemoi</h3>
                     <p class="staff-role">Lecturer – Networks & Cybersecurity</p>
                     <p>Focuses on computer networks, cybersecurity, and distributed systems with several publications in international journals.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>p.kemoi@egerton.ac.ke</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 722 456 789</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/staff/mr-njoroge.jpg" alt="Mr. Charles N. Njoroge" class="staff-img">
-                    <h3 class="staff-name">Mr. Charles N. Njoroge</h3>
-                    <p class="staff-role">Lecturer – Web Systems</p>
-                    <p>Specializes in web development, user experience design, and front-end technologies.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>c.njoroge@egerton.ac.ke</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 722 567 890</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/staff/ms-kipiyegen.jpg" alt="Ms. Noela C. Kipiyegen" class="staff-img">
-                    <h3 class="staff-name">Ms. Noela C. Kipiyegen</h3>
-                    <p class="staff-role">Lecturer – Databases & Information Systems</p>
-                    <p>Expert in database management systems, information retrieval, and data modeling.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>n.kipiyegen@egerton.ac.ke</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 722 678 901</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/staff/mr-rop.jpg" alt="Mr. Leonard K. Rop" class="staff-img">
-                    <h3 class="staff-name">Mr. Leonard K. Rop</h3>
-                    <p class="staff-role">Senior Technologist</p>
-                    <p>Manages computer laboratories and provides technical support for departmental activities.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>l.rop@egerton.ac.ke</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 722 789 012</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Research Section -->
-    <section id="research" class="section section-accent">
+    <section id="research" class="section section-pale">
         <div class="container">
-            <h2 class="light-text">Research & Innovation</h2>
+            <h2>Research & Innovation</h2>
             <div class="grid grid-2">
                 <div class="fade-in">
-                    <div class="research-area text-contrast">
+                    <div class="research-area">
                         <h3>Artificial Intelligence & Machine Learning</h3>
                         <p>Applications in health, agriculture, and business analytics. Our researchers are developing AI solutions for crop disease detection and predictive healthcare models.</p>
                         <p><strong>Key Projects:</strong> AI-powered crop disease detection system for smallholder farmers; Machine learning models for predicting student academic performance.</p>
                     </div>
-                    <div class="research-area text-contrast">
+                    <div class="research-area">
                         <h3>Data Science & Big Data Analytics</h3>
                         <p>Leveraging large datasets for decision-making in various sectors including finance, public health, and environmental monitoring.</p>
                         <p><strong>Key Projects:</strong> Predictive analytics for financial markets; Big data solutions for healthcare management.</p>
                     </div>
-                    <div class="research-area text-contrast">
+                    <div class="research-area">
                         <h3>Cybersecurity & Networks</h3>
                         <p>Ensuring secure digital environments and resilient infrastructures through advanced cryptographic techniques and network protocols.</p>
                         <p><strong>Key Projects:</strong> Development of a secure e-voting system using blockchain technology; Network intrusion detection systems.</p>
@@ -1313,8 +968,7 @@
                 </div>
                 <div class="fade-in">
                     <div class="card">
-                        <!-- Using local image -->
-                        <img src="images/research-lab.jpg" alt="Research Lab" class="card-img">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Research Lab" class="card-img">
                         <div class="card-content">
                             <h3 class="card-title">Research Collaborations</h3>
                             <p>We partner with industry leaders and international institutions to advance cutting-edge research in computing technologies.</p>
@@ -1324,7 +978,7 @@
                                 <li>Kenya National Innovation Agency (KENIA) – Student innovation incubation</li>
                                 <li>International universities for joint research projects and exchange programs</li>
                             </ul>
-                            <a class="btn btn-outline" style="margin-top: var(--space-sm);">View Research Projects</a>
+                            <a class="btn layout-btn" style="margin-top: var(--space-sm);">View Research Projects</a>
                         </div>
                     </div>
                 </div>
@@ -1338,225 +992,24 @@
             <h2>Our Facilities</h2>
             <div class="grid grid-3">
                 <div class="facility-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/facilities/programming-lab.jpg" alt="Programming Lab" class="card-img">
+                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Programming Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Programming Lab</h3>
                         <p>Equipped with modern PCs for C, C++, Java, and Python programming exercises. Features high-speed internet and specialized software for software development.</p>
                     </div>
                 </div>
                 <div class="facility-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/facilities/networking-lab.jpg" alt="Networking Lab" class="card-img">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Networking Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Networking Lab</h3>
                         <p>Dedicated for networking simulations, router configuration, and cybersecurity training. Includes Cisco equipment and specialized network analysis tools.</p>
                     </div>
                 </div>
                 <div class="facility-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/facilities/multimedia-lab.jpg" alt="Multimedia Lab" class="card-img">
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1442&q=80" alt="Multimedia Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Multimedia Lab</h3>
                         <p>Supports graphic design, web development, and multimedia projects. Equipped with high-end computers and creative software suites.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="fade-in" style="margin-top: var(--space-xl);">
-                <h3>Software Resources</h3>
-                <div class="grid grid-4">
-                    <div>
-                        <h4>Programming</h4>
-                        <ul>
-                            <li>Visual Studio</li>
-                            <li>Eclipse</li>
-                            <li>IntelliJ IDEA</li>
-                            <li>PyCharm</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Database</h4>
-                        <ul>
-                            <li>MySQL</li>
-                            <li>Oracle</li>
-                            <li>MongoDB</li>
-                            <li>PostgreSQL</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Networking</h4>
-                        <ul>
-                            <li>Cisco Packet Tracer</li>
-                            <li>Wireshark</li>
-                            <li>GNS3</li>
-                            <li>Nmap</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Design</h4>
-                        <ul>
-                            <li>Adobe Creative Suite</li>
-                            <li>Figma</li>
-                            <li>Blender</li>
-                            <li>Unity</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Developers Section -->
-    <section id="developers" class="section section-light">
-        <div class="container">
-            <h2>Website Development Team</h2>
-            <p>This website was developed by a team of talented students from the Department of Computer and Applied Computer Science as part of their frontend development project.</p>
-            
-            <div class="grid grid-3">
-                <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/developers/raphael.jpg" alt="Raphael Mwendwa" class="staff-img">
-                    <h3 class="staff-name">Raphael Mwendwa</h3>
-                    <p class="staff-role">Project Lead & Frontend Developer</p>
-                    <p>Responsible for overall website architecture, user interface design, and project coordination.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>siraphaelmwendwa@gmail.com</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 757 319 350</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-github"></i>
-                                <span>seniorsirraphael</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/developers/dian.jpg" alt="Dian Bryner Ochieng" class="staff-img">
-                    <h3 class="staff-name">Dian Bryner Ochieng</h3>
-                    <p class="staff-role">UI/UX Designer & Frontend Developer</p>
-                    <p>Designed the user interface and implemented responsive layouts for optimal user experience across all devices.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>dianochieng@egerton.ac.ke</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 700 000 001</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-github"></i>
-                                <span>dianochieng</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/developers/lily.jpg" alt="Lily Mae Oduor" class="staff-img">
-                    <h3 class="staff-name">Lily Mae Oduor</h3>
-                    <p class="staff-role">Content Strategist & Frontend Developer</p>
-                    <p>Focused on content organization, information architecture, and ensuring content accessibility across all screen sizes.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>lilyoduor@egerton.ac.ke</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 700 000 002</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-github"></i>
-                                <span>lilyoduor</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="grid grid-3" style="margin-top: var(--space-md);">
-                <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="syl.jpeg" alt="Sylvenus Simiyu" class="staff-img">
-                    <h3 class="staff-name">Sylvenus Simiyu</h3>
-                    <p class="staff-role">Frontend Developer & Accessibility Specialist</p>
-                    <p>Implemented interactive features and ensured the website meets modern accessibility standards.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>sylvenussimiyu4@gmail.com</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 748 726 022</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-github"></i>
-                                <span>sylvenus</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/developers/trevor.jpg" alt="Trevor Juma" class="staff-img">
-                    <h3 class="staff-name">Trevor Juma</h3>
-                    <p class="staff-role">Frontend Developer & Performance Analyst</p>
-                    <p>Optimized website performance and implemented responsive design patterns for various screen sizes.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>trevorjuma@egerton.ac.ke</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254 700 000 004</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-github"></i>
-                                <span>trevorjuma</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="staff-card card fade-in">
-                    <!-- Using local image -->
-                    <img src="images/developers/dorcas.jpg" alt="Dorcas Muthoni" class="staff-img">
-                    <h3 class="staff-name">Dorcas Muthoni</h3>
-                    <p class="staff-role">Visual Designer & Frontend Developer</p>
-                    <p>Created visual elements, graphics, and maintained design consistency throughout the website interface.</p>
-                    <div class="staff-contact">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>muthonidorcas048@gmail.com</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+254768584301</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fab fa-github"></i>
-                                <span>muthonidorcas048</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1564,31 +1017,25 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section section-dark">
+    <section id="contact" class="section section-green">
         <div class="container">
-            <h2 class="light-text">Contact Us</h2>
+            <h2 style="color: var(--white); border-left-color: var(--secondary-green);">Contact Us</h2>
             <div class="grid grid-2">
                 <div class="fade-in">
                     <h3>Get In Touch</h3>
                     <p>We welcome inquiries from prospective students, researchers, and collaborators. Our team is available to answer any questions you may have about our programs, research, or facilities.</p>
                     
-                    <div class="contact-info">
-                        <div class="contact-item" style="margin-bottom: var(--space-md);">
-                            <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
-                            <p>Egerton University, Faculty of Science, First Floor (Right Wing), Njoro, Kenya</p>
-                        </div>
-                        <div class="contact-item" style="margin-bottom: var(--space-md);">
-                            <h4><i class="fas fa-phone"></i> Phone</h4>
-                            <p>+254 51 221 7683</p>
-                        </div>
-                        <div class="contact-item" style="margin-bottom: var(--space-md);">
-                            <h4><i class="fas fa-envelope"></i> Email</h4>
-                            <p>compsci@egerton.ac.ke</p>
-                        </div>
-                        <div class="contact-item">
-                            <h4><i class="fas fa-clock"></i> Office Hours</h4>
-                            <p>Monday – Friday, 8:00 AM – 5:00 PM</p>
-                        </div>
+                    <div style="margin-top: var(--space-md);">
+                        <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
+                        <p>Egerton University, Faculty of Science, First Floor (Right Wing), Njoro, Kenya</p>
+                    </div>
+                    <div style="margin-top: var(--space-md);">
+                        <h4><i class="fas fa-phone"></i> Phone</h4>
+                        <p>+254 51 221 7683</p>
+                    </div>
+                    <div style="margin-top: var(--space-md);">
+                        <h4><i class="fas fa-envelope"></i> Email</h4>
+                        <p>compsci@egerton.ac.ke</p>
                     </div>
                     
                     <div style="margin-top: var(--space-lg);">
@@ -1625,7 +1072,7 @@
                             <label for="message">Message</label>
                             <textarea id="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn layout-btn">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -1643,12 +1090,12 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a data-section="home">Home</a></li>
-                        <li><a data-section="about">About Us</a></li>
-                        <li><a data-section="programs">Programs</a></li>
-                        <li><a data-section="staff">Faculty</a></li>
-                        <li><a data-section="research">Research</a></li>
-                        <li><a data-section="facilities">Facilities</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#staff">Faculty</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1659,183 +1106,60 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Egerton University - Department of Computer and Applied Computer Science. All rights reserved.</p>
+                <p>&copy; 2023 Egerton University - Department of Computer and Applied Computer Science. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // =============================
-        // ENHANCED JAVASCRIPT FEATURES
-        // This section adds interactivity to the website
-        // =============================
-
-        // Document ready function - runs when the page is fully loaded
+        // Mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('Departmental Website Loaded Successfully');
-            
-            // Initialize all components
-            initSectionNavigation();
-            initMobileMenu();
-            initContactForm();
-            initAnimations();
-            initBackToTop();
-            initFooterLinks(); // Initialize footer quick links
-        });
-
-        // =============================
-        // SECTION-BASED NAVIGATION
-        // Handles navigation between sections
-        // =============================
-        function initSectionNavigation() {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('.section');
-            const buttons = document.querySelectorAll('.btn[data-section]');
-            
-            // Function to show a specific section
-            function showSection(sectionId) {
-                // Hide all sections
-                sections.forEach(section => {
-                    section.classList.remove('active');
-                });
-                
-                // Show the selected section
-                const targetSection = document.getElementById(sectionId);
-                if (targetSection) {
-                    targetSection.classList.add('active');
-                }
-                
-                // Update active navigation link
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('data-section') === sectionId) {
-                        link.classList.add('active');
-                    }
-                });
-                
-                // Scroll to top of the page for better UX
-                window.scrollTo(0, 0);
-            }
-            
-            // Add click event to navigation links
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    const sectionId = this.getAttribute('data-section');
-                    showSection(sectionId);
-                });
-            });
-            
-            // Add click event to buttons with data-section attribute
-            buttons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const sectionId = this.getAttribute('data-section');
-                    showSection(sectionId);
-                });
-            });
-            
-            // Show home section by default
-            showSection('home');
-        }
-
-        // =============================
-        // FOOTER QUICK LINKS FUNCTIONALITY
-        // Handles footer quick links navigation
-        // =============================
-        function initFooterLinks() {
-            const footerLinks = document.querySelectorAll('.footer-links a[data-section]');
-            
-            footerLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    const sectionId = this.getAttribute('data-section');
-                    showSection(sectionId);
-                });
-            });
-        }
-
-        // =============================
-        // MOBILE MENU FUNCTIONALITY
-        // Handles the mobile menu toggle
-        // =============================
-        function initMobileMenu() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const navMenu = document.getElementById('navMenu');
-            const overlay = document.getElementById('overlay');
-            const navLinks = document.querySelectorAll('.nav-link');
             
-            if (mobileMenuBtn && navMenu && overlay) {
-                // Toggle mobile menu
-                function toggleMobileMenu() {
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
                     navMenu.classList.toggle('active');
-                    overlay.classList.toggle('active');
                     mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
                         '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-                }
-                
-                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-                
-                // Close mobile menu when clicking on a link
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        navMenu.classList.remove('active');
-                        overlay.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    });
-                });
-                
-                // Close mobile menu when clicking on overlay
-                overlay.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                    overlay.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                 });
             }
-        }
-
-        // =============================
-        // CONTACT FORM HANDLING
-        // Handles form submission with validation
-        // =============================
-        function initContactForm() {
-            const contactForm = document.getElementById('contactForm');
             
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (navMenu.classList.contains('active')) {
+                            navMenu.classList.remove('active');
+                            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                        }
+                    }
+                });
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
                     e.preventDefault();
-                    
-                    // Get form values
-                    const name = document.getElementById('name').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const subject = document.getElementById('subject').value;
-                    const message = document.getElementById('message').value.trim();
-                    
-                    // Basic validation
-                    if (!name || !email || !message) {
-                        showNotification('Please fill in all required fields.', 'error');
-                        return;
-                    }
-                    
-                    // Email validation
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(email)) {
-                        showNotification('Please enter a valid email address.', 'error');
-                        return;
-                    }
-                    
-                    // Simulate form submission
-                    showNotification('Thank you for your message! We will get back to you soon.', 'success');
-                    
-                    // Reset form
+                    alert('Thank you for your message! We will get back to you soon.');
                     contactForm.reset();
                 });
             }
-        }
-
-        // =============================
-        // ANIMATIONS AND VISUAL EFFECTS
-        // Handles scroll-triggered animations
-        // =============================
-        function initAnimations() {
-            // Fade-in elements on scroll
+            
+            // Fade-in animation on scroll
             const fadeElements = document.querySelectorAll('.fade-in');
             
             const fadeObserver = new IntersectionObserver((entries) => {
@@ -1849,167 +1173,10 @@
             fadeElements.forEach(element => {
                 fadeObserver.observe(element);
             });
-        }
-
-        // =============================
-        // BACK TO TOP BUTTON
-        // Creates and manages the back to top button
-        // =============================
-        function initBackToTop() {
-            // Create back to top button
-            const backToTopBtn = document.createElement('button');
-            backToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-            backToTopBtn.id = 'backToTopBtn';
-            backToTopBtn.style.cssText = `
-                position: fixed;
-                bottom: 30px;
-                right: 30px;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background: var(--accent-gold);
-                color: var(--primary-blue);
-                border: none;
-                font-size: 1.2rem;
-                cursor: pointer;
-                display: none;
-                z-index: 1000;
-                box-shadow: var(--shadow-lg);
-                transition: all 0.3s ease;
-            `;
             
-            document.body.appendChild(backToTopBtn);
-            
-            // Show/hide button based on scroll position
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTopBtn.style.display = 'block';
-                } else {
-                    backToTopBtn.style.display = 'none';
-                }
-            });
-            
-            // Scroll to top when clicked
-            backToTopBtn.addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Add hover effect
-            backToTopBtn.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px)';
-                this.style.boxShadow = 'var(--shadow-xl)';
-            });
-            
-            backToTopBtn.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = 'var(--shadow-lg)';
-            });
-        }
-
-        // =============================
-        // NOTIFICATION SYSTEM
-        // Shows user feedback messages
-        // =============================
-        function showNotification(message, type) {
-            // Remove existing notifications
-            const existingNotification = document.querySelector('.notification');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-            
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.className = `notification ${type}`;
-            notification.innerHTML = `
-                <span>${message}</span>
-                <button class="notification-close"><i class="fas fa-times"></i></button>
-            `;
-            
-            // Style notification based on type
-            const bgColor = type === 'success' ? 'var(--success)' : 'var(--danger)';
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 15px 20px;
-                border-radius: var(--radius-md);
-                color: white;
-                font-weight: 600;
-                z-index: 10000;
-                animation: slideIn 0.3s ease;
-                max-width: 400px;
-                background: ${bgColor};
-                box-shadow: var(--shadow-lg);
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            `;
-            
-            // Add close button functionality
-            const closeBtn = notification.querySelector('.notification-close');
-            closeBtn.style.cssText = `
-                background: none;
-                border: none;
-                color: white;
-                cursor: pointer;
-                margin-left: 10px;
-            `;
-            
-            closeBtn.addEventListener('click', function() {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.parentNode.removeChild(notification);
-                    }
-                }, 300);
-            });
-            
-            document.body.appendChild(notification);
-            
-            // Auto-remove after 5 seconds
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.style.animation = 'slideOut 0.3s ease';
-                    setTimeout(() => {
-                        if (notification.parentNode) {
-                            notification.parentNode.removeChild(notification);
-                        }
-                    }, 300);
-                }
-            }, 5000);
-            
-            // Add CSS for notifications if not already added
-            if (!document.querySelector('#notification-styles')) {
-                const style = document.createElement('style');
-                style.id = 'notification-styles';
-                style.textContent = `
-                    @keyframes slideIn {
-                        from { transform: translateX(100%); opacity: 0; }
-                        to { transform: translateX(0); opacity: 1; }
-                    }
-                    @keyframes slideOut {
-                        from { transform: translateX(0); opacity: 1; }
-                        to { transform: translateX(100%); opacity: 0; }
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-        }
-
-        // =============================
-        // ADDITIONAL ENHANCEMENTS
-        // Miscellaneous improvements
-        // =============================
-        
-        // Dynamic year update for copyright
-        document.addEventListener('DOMContentLoaded', function() {
-            const yearElement = document.querySelector('.copyright p');
-            if (yearElement) {
-                yearElement.innerHTML = yearElement.innerHTML.replace('2025', new Date().getFullYear());
-            }
+            // Update copyright year
+            document.querySelector('.copyright p').innerHTML = 
+                document.querySelector('.copyright p').innerHTML.replace('2023', new Date().getFullYear());
         });
     </script>
 </body>
