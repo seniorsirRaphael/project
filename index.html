@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Department of Computer and Applied Computer Science - Egerton University</title>
+    <title>Department of Computer  Science - Egerton University</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ===========================
            CSS VARIABLES AND RESET
         =========================== */
         :root {
-            /* Color Palette - Light Green, Pale Green, White */
-            --primary-green: #2E8B57;      /* Sea Green */
-            --secondary-green: #90EE90;    /* Light Green */
-            --pale-green: #F0FFF0;         /* Honeydew */
-            --light-green: #98FB98;        /* Pale Green */
-            --accent-green: #3CB371;       /* Medium Sea Green */
-            --white: #FFFFFF;
-            --light-gray: #F8F9FA;
-            --text-dark: #2F4F4F;
+            /* Color Palette - Blended Greens */
+            --primary-green: #1e6b4e;
+            --secondary-green: #2e8b57;
+            --accent-green: #3cb371;
+            --light-green: #90ee90;
+            --pale-green: #f0fff0;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --text-dark: #2f4f4f;
             --text-light: #708090;
             
             /* Typography */
@@ -78,7 +79,7 @@
 
         h2 {
             font-size: 2rem;
-            border-left: 4px solid var(--secondary-green);
+            border-left: 4px solid var(--accent-green);
             padding-left: var(--space-sm);
             margin-bottom: var(--space-lg);
         }
@@ -124,7 +125,7 @@
         }
 
         .section-green {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
             color: var(--white);
         }
 
@@ -132,7 +133,7 @@
            HEADER AND NAVIGATION
         =========================== */
         header {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-green) 100%);
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
             color: var(--white);
             padding: var(--space-md) 0;
             position: sticky;
@@ -158,7 +159,7 @@
             width: 60px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--secondary-green);
+            border: 3px solid var(--light-green);
             transition: transform 0.3s ease;
             background-color: var(--white);
             padding: 5px;
@@ -203,7 +204,7 @@
 
         .nav-link:hover, .nav-link.active {
             background-color: rgba(255, 255, 255, 0.1);
-            color: var(--secondary-green);
+            color: var(--light-green);
         }
 
         .mobile-menu-btn {
@@ -220,8 +221,8 @@
            HERO SECTION
         =========================== */
         .hero {
-            background: linear-gradient(rgba(46, 139, 87, 0.85), rgba(60, 179, 113, 0.85)), 
-                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(30, 107, 78, 0.85), rgba(46, 139, 87, 0.85)), 
+                        url('images/campus_view.jpg') center/cover no-repeat;
             color: var(--white);
             text-align: center;
             padding: var(--space-xl) 0;
@@ -250,7 +251,7 @@
         .btn {
             display: inline-block;
             padding: var(--space-sm) var(--space-lg);
-            background: var(--secondary-green);
+            background: var(--light-green);
             color: var(--primary-green);
             border: none;
             border-radius: var(--radius-md);
@@ -265,18 +266,53 @@
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
-            background: var(--light-green);
+            background: var(--accent-green);
+            color: var(--white);
         }
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--secondary-green);
-            color: var(--secondary-green);
+            border: 2px solid var(--light-green);
+            color: var(--light-green);
         }
 
         .btn-outline:hover {
-            background: var(--secondary-green);
+            background: var(--light-green);
             color: var(--primary-green);
+        }
+
+        /* ===========================
+           TEASER SECTION
+        =========================== */
+        .teasers {
+            background: var(--white);
+            padding: var(--space-lg) 0;
+        }
+
+        .teaser-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .teaser-card {
+            background: var(--pale-green);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-green);
+        }
+
+        .teaser-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .teaser-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: var(--space-sm);
         }
 
         /* ===========================
@@ -366,7 +402,7 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--secondary-green);
+            border: 4px solid var(--light-green);
             margin: 0 auto var(--space-sm);
             transition: all 0.3s ease;
         }
@@ -399,7 +435,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(46, 139, 87, 0.85);
+            background: rgba(30, 107, 78, 0.85);
             color: var(--white);
             padding: var(--space-md);
             transform: translateY(100%);
@@ -424,6 +460,32 @@
         .research-area:hover {
             background: var(--light-green);
             transform: translateX(5px);
+        }
+
+        /* ===========================
+           DEVELOPERS SECTION
+        =========================== */
+        .developers-section {
+            background: var(--white);
+        }
+
+        .developer-card {
+            text-align: center;
+            padding: var(--space-md);
+        }
+
+        .developer-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-green);
+            margin: 0 auto var(--space-sm);
+            transition: all 0.3s ease;
+        }
+
+        .developer-card:hover .developer-img {
+            transform: scale(1.05);
         }
 
         /* ===========================
@@ -471,7 +533,7 @@
         }
 
         .footer-section h3 {
-            color: var(--secondary-green);
+            color: var(--light-green);
             border-left: none;
             padding-left: 0;
             margin-bottom: var(--space-md);
@@ -491,7 +553,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--secondary-green);
+            color: var(--light-green);
         }
 
         .social-links {
@@ -512,7 +574,7 @@
         }
 
         .social-link:hover {
-            background: var(--secondary-green);
+            background: var(--light-green);
             color: var(--primary-green);
             transform: translateY(-3px);
         }
@@ -622,31 +684,6 @@
                 font-size: 1rem;
             }
         }
-
-        /* ===========================
-           FLEXBOX AND GRID SECTION
-        =========================== */
-        .flexbox-grid-section {
-            background-color: var(--pale-green);
-        }
-
-        .layout-card {
-            background-color: var(--white);
-            border-left: 4px solid var(--light-green);
-        }
-
-        .layout-card .card-title {
-            color: var(--primary-green);
-        }
-
-        .layout-btn {
-            background-color: var(--light-green);
-            color: var(--primary-green);
-        }
-
-        .layout-btn:hover {
-            background-color: var(--secondary-green);
-        }
     </style>
 </head>
 <body>
@@ -673,6 +710,7 @@
                         <li><a class="nav-link" href="#staff">Staff</a></li>
                         <li><a class="nav-link" href="#research">Research</a></li>
                         <li><a class="nav-link" href="#facilities">Facilities</a></li>
+                        <li><a class="nav-link" href="#developers">Developers</a></li>
                         <li><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -686,10 +724,42 @@
             <div class="container">
                 <div class="hero-content fade-in">
                     <h1>Advancing Computer Science Education and Research</h1>
-                    <p>Join us at Egerton University's Department of Computer  Science, where we nurture innovation, research excellence, and technological leadership for a digital future.</p>
+                    <p>Join us at Egerton University's Department of Computer Science, where we nurture innovation, research excellence, and technological leadership for a digital future.</p>
                     <div class="hero-buttons">
                         <a class="btn" href="#programs">Explore Programs</a>
                         <a class="btn btn-outline" href="#contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Teasers Section -->
+        <div class="teasers">
+            <div class="container">
+                <div class="teaser-grid">
+                    <div class="teaser-card fade-in">
+                        <i class="fas fa-graduation-cap teaser-icon"></i>
+                        <h3>Academic Programs</h3>
+                        <p>Explore our comprehensive undergraduate and graduate programs in computer science.</p>
+                        <a href="#programs" class="btn" style="margin-top: var(--space-sm);">Learn More</a>
+                    </div>
+                    <div class="teaser-card fade-in">
+                        <i class="fas fa-flask teaser-icon"></i>
+                        <h3>Research Excellence</h3>
+                        <p>Discover our cutting-edge research in AI, cybersecurity, data science, and more.</p>
+                        <a href="#research" class="btn" style="margin-top: var(--space-sm);">Explore Research</a>
+                    </div>
+                    <div class="teaser-card fade-in">
+                        <i class="fas fa-laptop-code teaser-icon"></i>
+                        <h3>State-of-the-Art Facilities</h3>
+                        <p>Learn about our modern labs and computing resources available to students.</p>
+                        <a href="#facilities" class="btn" style="margin-top: var(--space-sm);">View Facilities</a>
+                    </div>
+                    <div class="teaser-card fade-in">
+                        <i class="fas fa-users teaser-icon"></i>
+                        <h3>Meet Our Team</h3>
+                        <p>Get to know our experienced faculty members and dedicated staff.</p>
+                        <a href="#staff" class="btn" style="margin-top: var(--space-sm);">Meet Staff</a>
                     </div>
                 </div>
             </div>
@@ -725,85 +795,10 @@
                         <h3>Our Commitment</h3>
                         <p>We are dedicated to providing quality education that combines theoretical knowledge with practical applications, preparing students for successful careers in technology. With state-of-the-art facilities, experienced faculty, and strong industry partnerships, we provide an environment that fosters academic excellence and professional growth.</p>
                         <div class="card">
-                            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Students collaborating" class="card-img">
+                            <img src="images/students-collaborating.jpg" alt="Students collaborating" class="card-img">
                             <div class="card-content">
                                 <p>Our students work on real-world projects that prepare them for the tech industry.</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Grid example -->
-                <div class="grid grid-3">
-                    <div class="card fade-in">
-                        <div class="card-content">
-                            <h3 class="card-title">Modern Curriculum</h3>
-                            <p>Our programs are regularly updated to reflect the latest trends and technologies in computer science, ensuring our graduates are industry-ready.</p>
-                        </div>
-                    </div>
-                    <div class="card fade-in">
-                        <div class="card-content">
-                            <h3 class="card-title">Experienced Faculty</h3>
-                            <p>Learn from professors and industry professionals with years of practical experience and research expertise.</p>
-                        </div>
-                    </div>
-                    <div class="card fade-in">
-                        <div class="card-content">
-                            <h3 class="card-title">Career Support</h3>
-                            <p>We provide career guidance, internship opportunities, and industry connections to help our graduates secure rewarding positions.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Flexbox and Grid Section -->
-        <div class="section flexbox-grid-section">
-            <div class="container">
-                <h2 style="color: var(--primary-green);">CSS Layout Systems: Flexbox & Grid</h2>
-                
-                <div class="grid grid-2">
-                    <div class="fade-in">
-                        <div class="card layout-card">
-                            <div class="card-content">
-                                <h3 class="card-title">Flexbox Layout System</h3>
-                                <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns. It provides an efficient way to distribute space and align items in a container, even when their size is unknown or dynamic.</p>
-                                <p>Key features of Flexbox include:</p>
-                                <ul>
-                                    <li>Flexible item alignment and distribution</li>
-                                    <li>Responsive design without media queries</li>
-                                    <li>Easy vertical and horizontal centering</li>
-                                    <li>Order control of elements</li>
-                                </ul>
-                                <a href="https://seniorsirraphael.github.io/project/flexbox" class="btn layout-btn" style="margin-top: var(--space-sm);">Read More About Flexbox</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="fade-in">
-                        <div class="card layout-card">
-                            <div class="card-content">
-                                <h3 class="card-title">CSS Grid Layout System</h3>
-                                <p>CSS Grid is a two-dimensional layout system that allows you to create complex web layouts with rows and columns. It provides precise control over both the horizontal and vertical alignment of elements.</p>
-                                <p>Key features of CSS Grid include:</p>
-                                <ul>
-                                    <li>Two-dimensional layouts (rows and columns)</li>
-                                    <li>Precise placement of items</li>
-                                    <li>Responsive grid templates</li>
-                                    <li>Overlapping content control</li>
-                                </ul>
-                                <a href="https://seniorsirraphael.github.io/project/flexbox" class="btn layout-btn" style="margin-top: var(--space-sm);">Read More About Grids</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="fade-in" style="margin-top: var(--space-lg);">
-                    <div class="card layout-card">
-                        <div class="card-content">
-                            <h3 class="card-title">Modern Web Layout Techniques</h3>
-                            <p>Both Flexbox and CSS Grid are essential tools in modern web development. While Flexbox excels at one-dimensional layouts, CSS Grid provides powerful capabilities for two-dimensional layouts. Many modern websites use a combination of both to create responsive, maintainable designs.</p>
-                            <p>Understanding when to use each layout system is key to creating efficient and visually appealing web interfaces that work across different screen sizes and devices.</p>
                         </div>
                     </div>
                 </div>
@@ -812,7 +807,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section section-light">
+    <section id="about" class="section section-pale">
         <div class="container">
             <h2>About Our Department</h2>
             <div class="grid grid-2">
@@ -843,7 +838,7 @@
     <!-- Programs Section -->
     <section id="programs" class="section section-green">
         <div class="container">
-            <h2 style="color: var(--white); border-left-color: var(--secondary-green);">Academic Programs</h2>
+            <h2 style="color: var(--white); border-left-color: var(--light-green);">Academic Programs</h2>
             <div class="grid grid-3">
                 <div class="card fade-in">
                     <div class="card-content">
@@ -856,7 +851,7 @@
                             <li>Database Administrator</li>
                             <li>Network Engineer</li>
                         </ul>
-                        <a class="btn layout-btn" style="margin-top: var(--space-sm);">Program Details</a>
+                        <a class="btn" style="margin-top: var(--space-sm); background: var(--light-green); color: var(--primary-green);">Program Details</a>
                     </div>
                 </div>
                 <div class="card fade-in">
@@ -870,7 +865,7 @@
                             <li>Business Analyst</li>
                             <li>IT Project Manager</li>
                         </ul>
-                        <a class="btn layout-btn" style="margin-top: var(--space-sm);">Program Details</a>
+                        <a class="btn" style="margin-top: var(--space-sm); background: var(--light-green); color: var(--primary-green);">Program Details</a>
                     </div>
                 </div>
                 <div class="card fade-in">
@@ -884,7 +879,7 @@
                             <li>Cybersecurity</li>
                             <li>Software Engineering</li>
                         </ul>
-                        <a class="btn layout-btn" style="margin-top: var(--space-sm);">Program Details</a>
+                        <a class="btn" style="margin-top: var(--space-sm); background: var(--light-green); color: var(--primary-green);">Program Details</a>
                     </div>
                 </div>
             </div>
@@ -899,7 +894,7 @@
             <h3>Head of Department</h3>
             <div class="grid grid-2 fade-in">
                 <div class="staff-card card">
-                    <img src="#" alt="Dr. Zachary O. Bosire" class="staff-img">
+                    <img src="images/staff/dr-bosire.jpg" alt="Dr. Zachary O. Bosire" class="staff-img">
                     <h3 class="staff-name">Dr. Zachary O. Bosire</h3>
                     <p class="staff-role">Head of Department</p>
                     <p>Provides academic leadership and strategic direction for the department. His research focuses on advancing computer science education and research that addresses both local and global challenges.</p>
@@ -921,21 +916,21 @@
             <h3>Academic Staff</h3>
             <div class="grid grid-3">
                 <div class="staff-card card fade-in">
-                    <img src="#" alt="Dr. Phoebe N. Ongalo" class="staff-img">
+                    <img src="images/staff/dr-ongalo.jpg" alt="Dr. Phoebe N. Ongalo" class="staff-img">
                     <h3 class="staff-name">Dr. Phoebe N. Ongalo</h3>
                     <p class="staff-role">Senior Lecturer – Software Engineering</p>
                     <p>Specializes in software engineering, system architecture, and agile development methodologies.</p>
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <img src="#" alt="Dr. George Y. Odongo" class="staff-img">
+                    <img src="images/staff/dr-odongo.jpg" alt="Dr. George Y. Odongo" class="staff-img">
                     <h3 class="staff-name">Dr. George Y. Odongo</h3>
                     <p class="staff-role">Lecturer – Data Science & Analytics</p>
                     <p>Expert in data science, machine learning, and business analytics with extensive industry experience.</p>
                 </div>
                 
                 <div class="staff-card card fade-in">
-                    <img src="#" alt="Dr. Peter K. Kemoi" class="staff-img">
+                    <img src="images/staff/dr-kemoi.jpg" alt="Dr. Peter K. Kemoi" class="staff-img">
                     <h3 class="staff-name">Dr. Peter K. Kemoi</h3>
                     <p class="staff-role">Lecturer – Networks & Cybersecurity</p>
                     <p>Focuses on computer networks, cybersecurity, and distributed systems with several publications in international journals.</p>
@@ -978,7 +973,7 @@
                                 <li>Kenya National Innovation Agency (KENIA) – Student innovation incubation</li>
                                 <li>International universities for joint research projects and exchange programs</li>
                             </ul>
-                            <a class="btn layout-btn" style="margin-top: var(--space-sm);">View Research Projects</a>
+                            <a class="btn" style="margin-top: var(--space-sm);">View Research Projects</a>
                         </div>
                     </div>
                 </div>
@@ -992,21 +987,21 @@
             <h2>Our Facilities</h2>
             <div class="grid grid-3">
                 <div class="facility-card card fade-in">
-                    <img src="#" alt="Programming Lab" class="card-img">
+                    <img src="images/facilities/programming-lab.jpg" alt="Programming Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Programming Lab</h3>
                         <p>Equipped with modern PCs for C, C++, Java, and Python programming exercises. Features high-speed internet and specialized software for software development.</p>
                     </div>
                 </div>
                 <div class="facility-card card fade-in">
-                    <img src="#" class="card-img">
+                    <img src="images/facilities/networking-lab.jpg" alt="Networking Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Networking Lab</h3>
                         <p>Dedicated for networking simulations, router configuration, and cybersecurity training. Includes Cisco equipment and specialized network analysis tools.</p>
                     </div>
                 </div>
                 <div class="facility-card card fade-in">
-                    <img src="#" alt="Multimedia Lab" class="card-img">
+                    <img src="images/facilities/multimedia-lab.jpg" alt="Multimedia Lab" class="card-img">
                     <div class="facility-overlay">
                         <h3>Multimedia Lab</h3>
                         <p>Supports graphic design, web development, and multimedia projects. Equipped with high-end computers and creative software suites.</p>
@@ -1016,10 +1011,76 @@
         </div>
     </section>
 
+    <!-- Developers Section -->
+    <section id="developers" class="section developers-section">
+        <div class="container">
+            <h2>Website Development Team</h2>
+            <p>This website was developed by a team of talented students from the Department of Computer and Applied Computer Science as part of their frontend development project.</p>
+            
+            <div class="grid grid-3">
+                <div class="developer-card card fade-in">
+                    <img src="images/developers/raphael.jpg" alt="Raphael Mwendwa" class="developer-img">
+                    <h3 class="staff-name">Raphael Mwendwa</h3>
+                    <p class="staff-role">Project Lead & Frontend Developer</p>
+                    <p>Responsible for overall website architecture, user interface design, and project coordination.</p>
+                    <div class="staff-contact">
+                        <div style="display: flex; flex-direction: column; gap: var(--space-xs); margin-top: var(--space-sm);">
+                            <div style="display: flex; align-items: center; gap: var(--space-xs);">
+                                <i class="fas fa-envelope"></i>
+                                <span>siraphaelmwendwa@gmail.com</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: var(--space-xs);">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 757 319 350</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="developer-card card fade-in">
+                    <img src="images/developers/dian.jpg" alt="Dian Bryner Ochieng" class="developer-img">
+                    <h3 class="staff-name">Dian Bryner Ochieng</h3>
+                    <p class="staff-role">UI/UX Designer & Frontend Developer</p>
+                    <p>Designed the user interface and implemented responsive layouts for optimal user experience across all devices.</p>
+                </div>
+                
+                <div class="developer-card card fade-in">
+                    <img src="images/developers/lily.jpg" alt="Lily Mae Oduor" class="developer-img">
+                    <h3 class="staff-name">Lily Mae Oduor</h3>
+                    <p class="staff-role">Content Strategist & Frontend Developer</p>
+                    <p>Focused on content organization, information architecture, and ensuring content accessibility across all screen sizes.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-3" style="margin-top: var(--space-md);">
+                <div class="developer-card card fade-in">
+                    <img src="images/developers/sylvenus.jpg" alt="Sylvenus Simiyu" class="developer-img">
+                    <h3 class="staff-name">Sylvenus Simiyu</h3>
+                    <p class="staff-role">Frontend Developer & Accessibility Specialist</p>
+                    <p>Implemented interactive features and ensured the website meets modern accessibility standards.</p>
+                </div>
+                
+                <div class="developer-card card fade-in">
+                    <img src="images/developers/trevor.jpg" alt="Trevor Juma" class="developer-img">
+                    <h3 class="staff-name">Trevor Juma</h3>
+                    <p class="staff-role">Frontend Developer & Performance Analyst</p>
+                    <p>Optimized website performance and implemented responsive design patterns for various screen sizes.</p>
+                </div>
+                
+                <div class="developer-card card fade-in">
+                    <img src="images/developers/dorcas.jpg" alt="Dorcas Muthoni" class="developer-img">
+                    <h3 class="staff-name">Dorcas Muthoni</h3>
+                    <p class="staff-role">Visual Designer & Frontend Developer</p>
+                    <p>Created visual elements, graphics, and maintained design consistency throughout the website interface.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section section-green">
         <div class="container">
-            <h2 style="color: var(--white); border-left-color: var(--secondary-green);">Contact Us</h2>
+            <h2 style="color: var(--white); border-left-color: var(--light-green);">Contact Us</h2>
             <div class="grid grid-2">
                 <div class="fade-in">
                     <h3>Get In Touch</h3>
@@ -1072,7 +1133,7 @@
                             <label for="message">Message</label>
                             <textarea id="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn layout-btn">Send Message</button>
+                        <button type="submit" class="btn" style="background: var(--light-green); color: var(--primary-green);">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -1096,6 +1157,7 @@
                         <li><a href="#staff">Faculty</a></li>
                         <li><a href="#research">Research</a></li>
                         <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#developers">Developers</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1176,7 +1238,7 @@
             
             // Update copyright year
             document.querySelector('.copyright p').innerHTML = 
-                document.querySelector('.copyright p').innerHTML.replace('2023', new Date().getFullYear());
+                document.querySelector('.copyright p').innerHTML.replace('2025', new Date().getFullYear());
         });
     </script>
 </body>
