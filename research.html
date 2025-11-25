@@ -1,78 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Research - Department of Computer Science</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Department of Computer Science</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Egerton University Logo" class="logo-img">
+                    <div class="logo-text">
+                        <h1>Egerton University</h1>
+                        <p>Department of Computer Science</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a class="nav-link" href="index.html">Home</a></li>
+                        <li><a class="nav-link" href="about.html">About</a></li>
+                        <li><a class="nav-link" href="programs.html">Programs</a></li>
+                        <li><a class="nav-link" href="staff.html">Staff</a></li>
+                        <li><a class="nav-link active" href="research.html">Research</a></li>
+                        <li><a class="nav-link" href="facilities.html">Facilities</a></li>
+                        <li><a class="nav-link" href="developers.html">Developers</a></li>
+                        <li><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <h1>Egerton University</h1>
-    <h2>Faculty of Science</h2>
-    <h3>Department of Computer Science</h3>
-  </header>
+    <!-- Research Section -->
+    <section class="section section-pale">
+        <div class="container">
+            <h2>Research & Innovation</h2>
+            <div class="grid grid-2">
+                <div class="fade-in">
+                    <div class="research-area">
+                        <h3>Artificial Intelligence & Machine Learning</h3>
+                        <p>Applications in health, agriculture, and business analytics. Our researchers are developing AI solutions for crop disease detection and predictive healthcare models.</p>
+                        <p><strong>Key Projects:</strong> AI-powered crop disease detection system for smallholder farmers; Machine learning models for predicting student academic performance.</p>
+                    </div>
+                    <div class="research-area">
+                        <h3>Data Science & Big Data Analytics</h3>
+                        <p>Leveraging large datasets for decision-making in various sectors including finance, public health, and environmental monitoring.</p>
+                        <p><strong>Key Projects:</strong> Predictive analytics for financial markets; Big data solutions for healthcare management.</p>
+                    </div>
+                    <div class="research-area">
+                        <h3>Cybersecurity & Networks</h3>
+                        <p>Ensuring secure digital environments and resilient infrastructures through advanced cryptographic techniques and network protocols.</p>
+                        <p><strong>Key Projects:</strong> Development of a secure e-voting system using blockchain technology; Network intrusion detection systems.</p>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="card">
+                        <img src="images/research-lab.jpg" alt="Research Lab" class="card-img">
+                        <div class="card-content">
+                            <h3 class="card-title">Research Collaborations</h3>
+                            <p>We partner with industry leaders and international institutions to advance cutting-edge research in computing technologies.</p>
+                            <h4>Current Collaborations:</h4>
+                            <ul>
+                                <li>Kenya Education Network (KENET) – ICT Infrastructure & Research Support</li>
+                                <li>Kenya National Innovation Agency (KENIA) – Student innovation incubation</li>
+                                <li>International universities for joint research projects and exchange programs</li>
+                            </ul>
+                            <a class="btn" style="margin-top: var(--space-sm);">View Research Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="programs.html">Programs</a></li>
-      <li><a href="units.html">Units</a></li>
-      <li><a href="staff.html">Staff</a></li>
-      <li><a href="facilities.html">Facilities</a></li>
-      <li><a href="students.html">Students</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Department of Computer Science</h3>
+                    <p>Egerton University is committed to excellence in computer science education, research, and innovation. Our department continues to be a leader in technological education in Kenya and beyond.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="staff.html">Faculty</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="facilities.html">Facilities</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Egerton University, Njoro, Kenya</p>
+                    <p><i class="fas fa-phone"></i> +254 51 221 7683</p>
+                    <p><i class="fas fa-envelope"></i> compsci@egerton.ac.ke</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Egerton University - Department of Computer and Applied Computer Science. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-  <!-- Main Content -->
-  <main>
-    <h2>Research</h2>
-    <p>
-      Research is a core pillar of the Department of Computer Science. 
-      Faculty and students work together on projects that solve real-world challenges 
-      through technology and innovation.
-    </p>
-
-    <h3>Research Areas</h3>
-    <ul>
-      <li>Artificial Intelligence and Machine Learning</li>
-      <li>Cybersecurity and Data Privacy</li>
-      <li>Big Data Analytics</li>
-      <li>Mobile and Web Application Development</li>
-      <li>Computer Networks and Cloud Computing</li>
-      <li>ICT for Agriculture, Health, and Education</li>
-    </ul>
-
-    <h3>Ongoing Projects</h3>
-    <ul>
-      <li>Development of e-Learning platforms for remote education.</li>
-      <li>Smart farming applications using IoT sensors and data analytics.</li>
-      <li>Cybersecurity awareness and training systems for schools and SMEs.</li>
-      <li>AI-powered chatbots for student support and university services.</li>
-    </ul>
-
-    <h3>Collaborations</h3>
-    <p>
-      The department actively collaborates with industry partners, research institutions, 
-      and government agencies. Partnerships provide students with opportunities for internships, 
-      mentorship, and applied research.
-    </p>
-    <ul>
-      <li>Local tech startups and software companies</li>
-      <li>Kenya Education Network (KENET)</li>
-      <li>International research organizations and universities</li>
-    </ul>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Egerton University - Department of Computer Science</p>
-  </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
-
