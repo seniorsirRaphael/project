@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Department of Computer Science</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Egerton University Logo" class="logo-img">
+                    <div class="logo-text">
+                        <h1>Egerton University</h1>
+                        <p>Department of Computer Science</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a class="nav-link" href="index.html">Home</a></li>
+                        <li><a class="nav-link" href="about.html">About</a></li>
+                        <li><a class="nav-link" href="programs.html">Programs</a></li>
+                        <li><a class="nav-link" href="staff.html">Staff</a></li>
+                        <li><a class="nav-link" href="research.html">Research</a></li>
+                        <li><a class="nav-link" href="facilities.html">Facilities</a></li>
+                        <li><a class="nav-link" href="developers.html">Developers</a></li>
+                        <li><a class="nav-link active" href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="section section-green">
+        <div class="container">
+            <h2 style="color: var(--white); border-left-color: var(--light-green);">Contact Us</h2>
+            <div class="grid grid-2">
+                <div class="fade-in">
+                    <h3>Get In Touch</h3>
+                    <p>We welcome inquiries from prospective students, researchers, and collaborators. Our team is available to answer any questions you may have about our programs, research, or facilities.</p>
+                    
+                    <div style="margin-top: var(--space-md);">
+                        <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
+                        <p>Egerton University, Faculty of Science, First Floor (Right Wing), Njoro, Kenya</p>
+                    </div>
+                    <div style="margin-top: var(--space-md);">
+                        <h4><i class="fas fa-phone"></i> Phone</h4>
+                        <p>+254 51 221 7683</p>
+                    </div>
+                    <div style="margin-top: var(--space-md);">
+                        <h4><i class="fas fa-envelope"></i> Email</h4>
+                        <p>compsci@egerton.ac.ke</p>
+                    </div>
+                    
+                    <div style="margin-top: var(--space-lg);">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject">
+                                <option value="general">General Inquiry</option>
+                                <option value="admission">Admission Information</option>
+                                <option value="program">Program Details</option>
+                                <option value="research">Research Collaboration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="background: var(--light-green); color: var(--primary-green);">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Department of Computer Science</h3>
+                    <p>Egerton University is committed to excellence in computer science education, research, and innovation. Our department continues to be a leader in technological education in Kenya and beyond.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="staff.html">Faculty</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="facilities.html">Facilities</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Egerton University, Njoro, Kenya</p>
+                    <p><i class="fas fa-phone"></i> +254 51 221 7683</p>
+                    <p><i class="fas fa-envelope"></i> compsci@egerton.ac.ke</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Egerton University - Department of Computer and Applied Computer Science. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
