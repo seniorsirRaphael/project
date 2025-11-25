@@ -1,76 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Staff - Department of Computer Science</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Staff - Department of Computer Science</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Egerton University Logo" class="logo-img">
+                    <div class="logo-text">
+                        <h1>Egerton University</h1>
+                        <p>Department of Computer Science</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a class="nav-link" href="index.html">Home</a></li>
+                        <li><a class="nav-link" href="about.html">About</a></li>
+                        <li><a class="nav-link" href="programs.html">Programs</a></li>
+                        <li><a class="nav-link active" href="staff.html">Staff</a></li>
+                        <li><a class="nav-link" href="research.html">Research</a></li>
+                        <li><a class="nav-link" href="facilities.html">Facilities</a></li>
+                        <li><a class="nav-link" href="developers.html">Developers</a></li>
+                        <li><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-  <!-- Header -->
-  <header>
-    <h1>Egerton University</h1>
-    <h2>Faculty of Science</h2>
-    <h3>Department of Computer Science</h3>
-  </header>
+    <!-- Staff Section -->
+    <section class="section section-light">
+        <div class="container">
+            <h2>Our Faculty and Staff</h2>
+            
+            <h3>Head of Department</h3>
+            <div class="grid grid-2 fade-in">
+                <div class="staff-card card">
+                    <img src="images/staff/dr-bosire.jpg" alt="Dr. Zachary O. Bosire" class="staff-img">
+                    <h3 class="staff-name">Dr. Zachary O. Bosire</h3>
+                    <p class="staff-role">Head of Department</p>
+                    <p>Provides academic leadership and strategic direction for the department. His research focuses on advancing computer science education and research that addresses both local and global challenges.</p>
+                    <div class="staff-contact">
+                        <div style="display: flex; flex-direction: column; gap: var(--space-xs); margin-top: var(--space-sm);">
+                            <div style="display: flex; align-items: center; gap: var(--space-xs);">
+                                <i class="fas fa-envelope"></i>
+                                <span>z.bosire@egerton.ac.ke</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: var(--space-xs);">
+                                <i class="fas fa-phone"></i>
+                                <span>+254 722 123 456</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Academic Staff</h3>
+            <div class="grid grid-3">
+                <div class="staff-card card fade-in">
+                    <img src="images/staff/dr-ongalo.jpg" alt="Dr. Phoebe N. Ongalo" class="staff-img">
+                    <h3 class="staff-name">Dr. Phoebe N. Ongalo</h3>
+                    <p class="staff-role">Senior Lecturer – Software Engineering</p>
+                    <p>Specializes in software engineering, system architecture, and agile development methodologies.</p>
+                </div>
+                
+                <div class="staff-card card fade-in">
+                    <img src="images/staff/dr-odongo.jpg" alt="Dr. George Y. Odongo" class="staff-img">
+                    <h3 class="staff-name">Dr. George Y. Odongo</h3>
+                    <p class="staff-role">Lecturer – Data Science & Analytics</p>
+                    <p>Expert in data science, machine learning, and business analytics with extensive industry experience.</p>
+                </div>
+                
+                <div class="staff-card card fade-in">
+                    <img src="images/staff/dr-kemoi.jpg" alt="Dr. Peter K. Kemoi" class="staff-img">
+                    <h3 class="staff-name">Dr. Peter K. Kemoi</h3>
+                    <p class="staff-role">Lecturer – Networks & Cybersecurity</p>
+                    <p>Focuses on computer networks, cybersecurity, and distributed systems with several publications in international journals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="programs.html">Programs</a></li>
-      <li><a href="units.html">Units</a></li>
-      <li><a href="staff.html">Staff</a></li>
-      <li><a href="facilities.html">Facilities</a></li>
-      <li><a href="students.html">Students</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Department of Computer Science</h3>
+                    <p>Egerton University is committed to excellence in computer science education, research, and innovation. Our department continues to be a leader in technological education in Kenya and beyond.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="staff.html">Faculty</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="facilities.html">Facilities</a></li>
+                        <li><a href="developers.html">Developers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Egerton University, Njoro, Kenya</p>
+                    <p><i class="fas fa-phone"></i> +254 51 221 7683</p>
+                    <p><i class="fas fa-envelope"></i> compsci@egerton.ac.ke</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Egerton University - Department of Computer and Applied Computer Science. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-  <!-- Main Content -->
-  <main>
-    <h2>Department Staff</h2>
-    <p>
-      The Department of Computer Science has a dedicated team of academic and support staff 
-      who are committed to excellence in teaching, research, and administration.
-    </p>
-
-    <h3>Head of Department</h3>
-    <ul>
-      <li><strong>Dr. Zachary O. Bosire</strong> – Head of Department (HoD)</li>
-    </ul>
-
-    <h3>Academic Staff</h3>
-    <ul>
-      <li>Dr. Phoebe N. Ongalo – Lecturer</li>
-      <li>Dr. George Y. Odongo – Lecturer</li>
-      <li>Dr. Peter K. Kemoi – Lecturer</li>
-      <li>Dr. Justine Ogeta – Part-Time Lecturer</li>
-      <li>Mr. C. L. Mocheche – Lecturer</li>
-      <li>Mr. James K. Katiuki – Lecturer</li>
-      <li>Mr. Charles N. Njoroge – Lecturer</li>
-      <li>Mr. Edward Kirui – Lecturer</li>
-      <li>Mr. Justin K. Omwoyo – Lecturer</li>
-      <li>Ms. Noela C. Kipiyegen – Lecturer</li>
-    </ul>
-
-    <h3>Technical and Support Staff</h3>
-    <ul>
-      <li>Mr. Leonard K. Rop – Senior Technologist</li>
-      <li>Mr. Joseph K. Mbugua – Technician</li>
-      <li>Mr. Kevin Onchoka – Part-Time Technician</li>
-      <li>Mr. Richard Kinyua – Part-Time Technician</li>
-      <li>Ms. Rachel W. Maina – Secretary</li>
-      <li>Mr. John W. Muchiri – Helpdesk/Messenger</li>
-    </ul>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Egerton University - Department of Computer Science</p>
-  </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
-
