@@ -3,124 +3,1015 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Department of Computer Science - Egerton University</title>
+    <title>Egerton University - Department of Computer Science</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-green: #2E8B57;
+            --secondary-green: #90EE90;
+            --accent-green: #3CB371;
+            --light-green: #F0FFF0;
+            --pale-green: #F8FFF8;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --dark-charcoal: #1e293b;
+            --text-dark: #334155;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: var(--text-dark);
+            padding-top: 76px; /* For fixed navbar */
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            padding: 0.8rem 0;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary-green);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .brand-text h1 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .brand-text p {
+            font-size: 0.85rem;
+            color: var(--white);
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .nav-link {
+            color: var(--white) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            margin: 0 2px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--secondary-green) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/department-building.jpg') no-repeat center center;
+            background-size: cover;
+            color: var(--white);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Section Styling */
+        .section-title {
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-green);
+            border-radius: 2px;
+        }
+
+        .section-pale {
+            background-color: var(--pale-green);
+            padding: 80px 0;
+        }
+
+        .section-light {
+            background-color: var(--light-green);
+            padding: 80px 0;
+        }
+
+        .section-green {
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            color: var(--white);
+            padding: 80px 0;
+        }
+
+        /* Card Styling */
+        .custom-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .custom-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .custom-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+
+        .staff-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary-green);
+            margin: 0 auto 20px;
+        }
+
+        /* Button Styling */
+        .btn-custom {
+            background: var(--primary-green);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-custom:hover {
+            background: var(--accent-green);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-custom:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .btn-custom:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Facilities Overlay */
+        .facility-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .facility-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: var(--white);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .facility-card:hover .facility-overlay {
+            transform: translateY(0);
+        }
+
+        /* Form Styling */
+        .form-control {
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 0.2rem rgba(46, 139, 87, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-charcoal);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-title {
+            color: var(--secondary-green);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-green);
+            padding-left: 5px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-green);
+            transform: translateY(-3px);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-green);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-green);
+            transform: translateY(-3px);
+        }
+
+        /* Flexbox vs Grid Page */
+        .flexgrid-hero {
+            background: linear-gradient(135deg, var(--primary-green), var(--accent-green));
+            color: var(--white);
+            padding: 100px 0;
+        }
+
+        .demo-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .demo-box:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .navbar-brand {
+                gap: 10px;
+            }
+            
+            .logo-img {
+                height: 40px;
+                width: 40px;
+            }
+            
+            .brand-text h1 {
+                font-size: 1.2rem;
+            }
+            
+            .brand-text p {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
-<body>
-    <!-- Header Section -->
-    <header>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+    
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <img src="images/logo.png" alt="Egerton University Logo" class="logo-img">
-                    <div class="logo-text">
-                        <h1>Egerton University</h1>
-                        <p>Department of Computer Science</p>
-                    </div>
+            <a class="navbar-brand" href="#home">
+                <img src="images/logo.png" alt="Egerton University Logo" class="logo-img">
+                <div class="brand-text">
+                    <h1>Egerton University</h1>
+                    <p>Department of Computer Science</p>
                 </div>
-                
-                <nav>
-                    <button class="mobile-menu-btn" id="mobileMenuBtn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a class="nav-link active" href="index.html">Home</a></li>
-                        <li><a class="nav-link" href="about.html">About</a></li>
-                        <li><a class="nav-link" href="programs.html">Programs</a></li>
-                        <li><a class="nav-link" href="staff.html">Staff</a></li>
-                        <li><a class="nav-link" href="research.html">Research</a></li>
-                        <li><a class="nav-link" href="facilities.html">Facilities</a></li>
-                        <li><a class="nav-link" href="developers.html">Developers</a></li>
-                        <li><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home"><i class="fas fa-home me-1"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><i class="fas fa-info-circle me-1"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#programs"><i class="fas fa-graduation-cap me-1"></i> Programs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#staff"><i class="fas fa-users me-1"></i> Staff</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#research"><i class="fas fa-flask me-1"></i> Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#facilities"><i class="fas fa-laptop-code me-1"></i> Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#developers"><i class="fas fa-code me-1"></i> Developers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fas fa-envelope me-1"></i> Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#flexbox"><i class="fas fa-th me-1"></i> Flexbox vs Grid</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Home Section -->
-    <section id="home" class="section">
-        <div class="hero">
-            <div class="container">
-                <div class="hero-content fade-in">
-                    <h1>Advancing Computer Science Education and Research</h1>
-                    <p>Join us at Egerton University's Department of Computer Science, where we nurture innovation, research excellence, and technological leadership for a digital future.</p>
-                    <div class="hero-buttons">
-                        <a class="btn" href="programs.html">Explore Programs</a>
-                        <a class="btn btn-outline" href="contact.html">Contact Us</a>
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="hero-content animate__animated animate__fadeInLeft">
+                        <h1 class="hero-title">Advancing Computer Science Education and Research</h1>
+                        <p class="lead mb-4">Join us at Egerton University's Department of Computer Science, where we nurture innovation, research excellence, and technological leadership for a digital future.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#programs" class="btn btn-custom animate__animated animate__pulse animate__infinite animate__slower">
+                                <i class="fas fa-graduation-cap me-2"></i>Explore Programs
+                            </a>
+                            <a href="#contact" class="btn btn-outline-light">
+                                <i class="fas fa-envelope me-2"></i>Contact Us
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Teasers Section -->
-        <div class="teasers">
-            <div class="container">
-                <div class="teaser-grid">
-                    <div class="teaser-card fade-in">
-                        <i class="fas fa-graduation-cap teaser-icon"></i>
-                        <h3>Academic Programs</h3>
-                        <p>Explore our comprehensive undergraduate and graduate programs in computer science.</p>
-                        <a href="programs.html" class="btn" style="margin-top: var(--space-sm);">Learn More</a>
+    <!-- Teasers Section -->
+    <section class="section-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="custom-card fade-in">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-graduation-cap fa-3x mb-3" style="color: var(--primary-green);"></i>
+                            <h4>Academic Programs</h4>
+                            <p class="mb-3">Explore our comprehensive undergraduate and graduate programs in computer science.</p>
+                            <a href="#programs" class="btn btn-sm btn-custom">Learn More</a>
+                        </div>
                     </div>
-                    <div class="teaser-card fade-in">
-                        <i class="fas fa-flask teaser-icon"></i>
-                        <h3>Research Excellence</h3>
-                        <p>Discover our cutting-edge research in AI, cybersecurity, data science, and more.</p>
-                        <a href="research.html" class="btn" style="margin-top: var(--space-sm);">Explore Research</a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="custom-card fade-in">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-flask fa-3x mb-3" style="color: var(--primary-green);"></i>
+                            <h4>Research Excellence</h4>
+                            <p class="mb-3">Discover cutting-edge research in AI, cybersecurity, data science, and more.</p>
+                            <a href="#research" class="btn btn-sm btn-custom">Explore Research</a>
+                        </div>
                     </div>
-                    <div class="teaser-card fade-in">
-                        <i class="fas fa-laptop-code teaser-icon"></i>
-                        <h3>State-of-the-Art Facilities</h3>
-                        <p>Learn about our modern labs and computing resources available to students.</p>
-                        <a href="facilities.html" class="btn" style="margin-top: var(--space-sm);">View Facilities</a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="custom-card fade-in">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-laptop-code fa-3x mb-3" style="color: var(--primary-green);"></i>
+                            <h4>State-of-the-Art Facilities</h4>
+                            <p class="mb-3">Modern labs and computing resources available to students.</p>
+                            <a href="#facilities" class="btn btn-sm btn-custom">View Facilities</a>
+                        </div>
                     </div>
-                    <div class="teaser-card fade-in">
-                        <i class="fas fa-users teaser-icon"></i>
-                        <h3>Meet Our Team</h3>
-                        <p>Get to know our experienced faculty members and dedicated staff.</p>
-                        <a href="staff.html" class="btn" style="margin-top: var(--space-sm);">Meet Staff</a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="custom-card fade-in">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-users fa-3x mb-3" style="color: var(--primary-green);"></i>
+                            <h4>Meet Our Team</h4>
+                            <p class="mb-3">Experienced faculty members and dedicated staff.</p>
+                            <a href="#staff" class="btn btn-sm btn-custom">Meet Staff</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="section section-light">
-            <div class="container">
-                <h2>Welcome to Our Department</h2>
-                
-                <!-- Flexbox example -->
-                <div class="flex-container">
-                    <div class="flex-item fade-in">
-                        <h3>Our Mission</h3>
-                        <p>The Department of Computer and Applied Computer Science at Egerton University is a center of excellence in computing education, research, and innovation. Our programs are designed to equip students with the knowledge and skills needed to excel in the rapidly evolving field of computer science.</p>
+    <!-- About Section -->
+    <section id="about" class="section-pale">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">About Our Department</h2>
+            
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="fade-in">
+                        <h3 class="mb-4">History</h3>
+                        <p class="mb-4">Established in 1992, the Department of Computer and Applied Computer Science at Egerton University has been at the forefront of computing education and research in Kenya. Our department was created to respond to the growing demand for computer science professionals in Kenya and beyond.</p>
                         
-                        <!-- Nested flexbox example -->
-                        <div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-md);">
-                            <div style="display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm); background: var(--pale-green); border-radius: var(--radius-sm);">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span>Quality Education</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm); background: var(--pale-green); border-radius: var(--radius-sm);">
-                                <i class="fas fa-flask"></i>
-                                <span>Research Excellence</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-sm); background: var(--pale-green); border-radius: var(--radius-sm);">
-                                <i class="fas fa-handshake"></i>
-                                <span>Industry Partnerships</span>
+                        <h3 class="mb-4">Vision</h3>
+                        <p class="mb-4">To be a leading center of excellence in computer science and ICT education, research, and innovation in Kenya and beyond, producing graduates who are globally competitive and capable of driving technological advancement.</p>
+                        
+                        <h3 class="mb-4">Mission</h3>
+                        <p>To provide quality education in computing and information technology, conduct innovative research that addresses societal challenges, and produce graduates who can solve real-world problems using technology.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="custom-card fade-in hover-lift">
+                        <img src="images/department-building.jpg" class="card-img-top" alt="Department Building">
+                        <div class="card-body">
+                            <h4 class="card-title">Message from the Chair of Department</h4>
+                            <p class="card-text">"Welcome to the Department of Computer and Applied Computer Science. We are committed to equipping students with practical skills, research experience, and the knowledge necessary to thrive in the digital economy. Our faculty members are dedicated to providing a stimulating learning environment that fosters innovation and critical thinking."</p>
+                            <p class="mb-0"><strong>— Dr. Zachary O. Bosire, Head of Department</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section-green">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn" style="color: var(--white); border-left: 4px solid var(--light-green); padding-left: 15px;">Academic Programs</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in">
+                        <div class="card-body p-4">
+                            <h3 class="card-title h4 mb-3">BSc Computer Science</h3>
+                            <p class="mb-3">A comprehensive four-year program covering programming, algorithms, software engineering, networking, databases, and artificial intelligence. Students engage in hands-on labs, industry attachments, and a final year project to apply their knowledge.</p>
+                            <h5 class="mt-4 mb-2">Career Opportunities</h5>
+                            <ul class="mb-4">
+                                <li>Software Developer</li>
+                                <li>Systems Analyst</li>
+                                <li>Database Administrator</li>
+                                <li>Network Engineer</li>
+                            </ul>
+                            <a href="#" class="btn btn-custom w-100">Program Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in">
+                        <div class="card-body p-4">
+                            <h3 class="card-title h4 mb-3">BSc Applied Computer Science</h3>
+                            <p class="mb-3">Focuses on the application of computing in real-world settings, integrating programming, database systems, information management, and applied technologies to solve societal and industrial challenges.</p>
+                            <h5 class="mt-4 mb-2">Career Opportunities</h5>
+                            <ul class="mb-4">
+                                <li>IT Consultant</li>
+                                <li>Applications Developer</li>
+                                <li>Business Analyst</li>
+                                <li>IT Project Manager</li>
+                            </ul>
+                            <a href="#" class="btn btn-custom w-100">Program Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in">
+                        <div class="card-body p-4">
+                            <h3 class="card-title h4 mb-3">MSc Programs</h3>
+                            <p class="mb-3">Advanced training in computer science with research opportunities in AI, cybersecurity, data science, and software engineering. Focused on applied research and practical implementation of computing solutions across industries.</p>
+                            <h5 class="mt-4 mb-2">Specializations</h5>
+                            <ul class="mb-4">
+                                <li>Artificial Intelligence</li>
+                                <li>Data Science</li>
+                                <li>Cybersecurity</li>
+                                <li>Software Engineering</li>
+                            </ul>
+                            <a href="#" class="btn btn-custom w-100">Program Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Staff Section -->
+    <section id="staff" class="section-light">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">Our Faculty and Staff</h2>
+            
+            <h3 class="mb-4">Head of Department</h3>
+            <div class="row mb-5">
+                <div class="col-lg-6">
+                    <div class="custom-card fade-in">
+                        <div class="card-body text-center p-4">
+                            <img src="images/staff/bosire.jpg" alt="Dr. Zachary O. Bosire" class="staff-img">
+                            <h3 class="staff-name h4 mb-2">Dr. Zachary O. Bosire</h3>
+                            <p class="staff-role text-muted mb-3">Head of Department</p>
+                            <p class="mb-4">Provides academic leadership and strategic direction for the department. His research focuses on advancing computer science education and research that addresses both local and global challenges.</p>
+                            <div class="staff-contact">
+                                <div class="d-flex flex-column gap-2">
+                                    <div class="d-flex align-items-center justify-content-center gap-2">
+                                        <i class="fas fa-envelope text-primary"></i>
+                                        <span>z.bosire@egerton.ac.ke</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-center gap-2">
+                                        <i class="fas fa-phone text-primary"></i>
+                                        <span>+254 722 123 456</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="flex-item fade-in">
-                        <h3>Our Commitment</h3>
-                        <p>We are dedicated to providing quality education that combines theoretical knowledge with practical applications, preparing students for successful careers in technology. With state-of-the-art facilities, experienced faculty, and strong industry partnerships, we provide an environment that fosters academic excellence and professional growth.</p>
-                        <div class="card">
-                            <img src="images/students-collaborating.jpg" alt="Students collaborating" class="card-img">
-                            <div class="card-content">
-                                <p>Our students work on real-world projects that prepare them for the tech industry.</p>
+                </div>
+            </div>
+            
+            <h3 class="mb-4">Academic Staff</h3>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in hover-lift">
+                        <div class="card-body text-center p-4">
+                            <img src="images/staff/phoebe.jpg" alt="Dr. Phoebe N. Ongalo" class="staff-img">
+                            <h3 class="staff-name h4 mb-2">Dr. Phoebe N. Ongalo</h3>
+                            <p class="staff-role text-muted mb-3">Senior Lecturer – Software Engineering</p>
+                            <p class="mb-0">Specializes in software engineering, system architecture, and agile development methodologies.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in hover-lift">
+                        <div class="card-body text-center p-4">
+                            <img src="images/staff/odongo.jpg" alt="Dr. George Y. Odongo" class="staff-img">
+                            <h3 class="staff-name h4 mb-2">Dr. George Y. Odongo</h3>
+                            <p class="staff-role text-muted mb-3">Lecturer – Data Science & Analytics</p>
+                            <p class="mb-0">Expert in data science, machine learning, and business analytics with extensive industry experience.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in hover-lift">
+                        <div class="card-body text-center p-4">
+                            <img src="images/staff/worker.jpg" alt="Dr. Peter K. Kemoi" class="staff-img">
+                            <h3 class="staff-name h4 mb-2">Dr. Peter K. Kemoi</h3>
+                            <p class="staff-role text-muted mb-3">Lecturer – Networks & Cybersecurity</p>
+                            <p class="mb-0">Focuses on computer networks, cybersecurity, and distributed systems with several publications in international journals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section-pale">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">Research & Innovation</h2>
+            
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="fade-in">
+                        <div class="research-area mb-5">
+                            <h3 class="mb-3">Artificial Intelligence & Machine Learning</h3>
+                            <p class="mb-2">Applications in health, agriculture, and business analytics. Our researchers are developing AI solutions for crop disease detection and predictive healthcare models.</p>
+                            <p><strong>Key Projects:</strong> AI-powered crop disease detection system for smallholder farmers; Machine learning models for predicting student academic performance.</p>
+                        </div>
+                        
+                        <div class="research-area mb-5">
+                            <h3 class="mb-3">Data Science & Big Data Analytics</h3>
+                            <p class="mb-2">Leveraging large datasets for decision-making in various sectors including finance, public health, and environmental monitoring.</p>
+                            <p><strong>Key Projects:</strong> Predictive analytics for financial markets; Big data solutions for healthcare management.</p>
+                        </div>
+                        
+                        <div class="research-area">
+                            <h3 class="mb-3">Cybersecurity & Networks</h3>
+                            <p class="mb-2">Ensuring secure digital environments and resilient infrastructures through advanced cryptographic techniques and network protocols.</p>
+                            <p><strong>Key Projects:</strong> Development of a secure e-voting system using blockchain technology; Network intrusion detection systems.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="custom-card fade-in hover-lift">
+                        <img src="images/research-lab.jpg" class="card-img-top" alt="Research Lab">
+                        <div class="card-body">
+                            <h4 class="card-title mb-3">Research Collaborations</h4>
+                            <p class="card-text mb-4">We partner with industry leaders and international institutions to advance cutting-edge research in computing technologies.</p>
+                            <h5 class="mb-3">Current Collaborations:</h5>
+                            <ul class="mb-4">
+                                <li>Kenya Education Network (KENET) – ICT Infrastructure & Research Support</li>
+                                <li>Kenya National Innovation Agency (KENIA) – Student innovation incubation</li>
+                                <li>International universities for joint research projects and exchange programs</li>
+                            </ul>
+                            <a href="#" class="btn btn-custom w-100">View Research Projects</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="section-light">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">Our Facilities</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="facility-card custom-card fade-in">
+                        <img src="images/facilities/programming-lab.jpg" class="card-img-top" alt="Programming Lab">
+                        <div class="facility-overlay">
+                            <h3>Programming Lab</h3>
+                            <p>Equipped with modern PCs for C, C++, Java, and Python programming exercises. Features high-speed internet and specialized software for software development.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="facility-card custom-card fade-in">
+                        <img src="images/facilities/networking-lab.jpg" class="card-img-top" alt="Networking Lab">
+                        <div class="facility-overlay">
+                            <h3>Networking Lab</h3>
+                            <p>Dedicated for networking simulations, router configuration, and cybersecurity training. Includes Cisco equipment and specialized network analysis tools.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="facility-card custom-card fade-in">
+                        <img src="images/facilities/multimedia-lab.jpg" class="card-img-top" alt="Multimedia Lab">
+                        <div class="facility-overlay">
+                            <h3>Multimedia Lab</h3>
+                            <p>Supports graphic design, web development, and multimedia projects. Equipped with high-end computers and creative software suites.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developers Section -->
+    <section id="developers" class="section-pale">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">Website Development Team</h2>
+            <p class="lead text-center mb-5">This website was developed by a team of talented students from the Department of Computer and Applied Computer Science as part of their frontend development project.</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in hover-lift">
+                        <div class="card-body text-center p-4">
+                            <img src="images/developers/raphael.jpg" alt="Raphael Mwendwa" class="staff-img">
+                            <h3 class="staff-name h4 mb-2">Raphael Mwendwa</h3>
+                            <p class="staff-role text-muted mb-3">Project Lead & Frontend Developer</p>
+                            <p class="mb-4">Responsible for overall website architecture, user interface design, and project coordination.</p>
+                            <div class="staff-contact">
+                                <div class="d-flex flex-column gap-2">
+                                    <div class="d-flex align-items-center justify-content-center gap-2">
+                                        <i class="fas fa-envelope text-primary"></i>
+                                        <span>siraphaelmwendwa@gmail.com</span>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-center gap-2">
+                                        <i class="fas fa-phone text-primary"></i>
+                                        <span>+254 757 319 350</span>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in hover-lift">
+                        <div class="card-body text-center p-4">
+                            <img src="images/developers/dian.jpg" alt="Dian Bryner Ochieng" class="staff-img">
+                            <h3 class="staff-name h4 mb-2">Dian Bryner Ochieng</h3>
+                            <p class="staff-role text-muted mb-3">UI/UX Designer & Frontend Developer</p>
+                            <p class="mb-0">Designed the user interface and implemented responsive layouts for optimal user experience across all devices.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in hover-lift">
+                        <div class="card-body text-center p-4">
+                            <img src="images/developers/lily.jpg" alt="Lily Mae Oduor" class="staff-img">
+                            <h3 class="staff-name h4 mb-2">Lily Mae Oduor</h3>
+                            <p class="staff-role text-muted mb-3">Content Strategist & Frontend Developer</p>
+                            <p class="mb-0">Focused on content organization, information architecture, and ensuring content accessibility across all screen sizes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in hover-lift">
+                        <div class="card-body text-center p-4">
+                            <img src="images/developers/sylvenus.jpg" alt="Sylvenus Simiyu" class="staff-img">
+                            <h3 class="staff-name h4 mb-2">Sylvenus Simiyu</h3>
+                            <p class="staff-role text-muted mb-3">Frontend Developer & Accessibility Specialist</p>
+                            <p class="mb-0">Implemented interactive features and ensured the website meets modern accessibility standards.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in hover-lift">
+                        <div class="card-body text-center p-4">
+                            <img src="images/developers/trevor.jpg" alt="Trevor Juma" class="staff-img">
+                            <h3 class="staff-name h4 mb-2">Trevor Juma</h3>
+                            <p class="staff-role text-muted mb-3">Frontend Developer & Performance Analyst</p>
+                            <p class="mb-0">Optimized website performance and implemented responsive design patterns for various screen sizes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="custom-card fade-in hover-lift">
+                        <div class="card-body text-center p-4">
+                            <img src="images/developers/dorcas.jpg" alt="Dorcas Muthoni" class="staff-img">
+                            <h3 class="staff-name h4 mb-2">Dorcas Muthoni</h3>
+                            <p class="staff-role text-muted mb-3">Visual Designer & Frontend Developer</p>
+                            <p class="mb-0">Created visual elements, graphics, and maintained design consistency throughout the website interface.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-green">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn" style="color: var(--white); border-left: 4px solid var(--light-green); padding-left: 15px;">Contact Us</h2>
+            
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="fade-in">
+                        <h3 class="mb-4">Get In Touch</h3>
+                        <p class="mb-4">We welcome inquiries from prospective students, researchers, and collaborators. Our team is available to answer any questions you may have about our programs, research, or facilities.</p>
+                        
+                        <div class="contact-info mb-4">
+                            <h4 class="mb-3"><i class="fas fa-map-marker-alt me-2"></i> Location</h4>
+                            <p>Egerton University, Faculty of Science, First Floor (Right Wing), Njoro, Kenya</p>
+                        </div>
+                        
+                        <div class="contact-info mb-4">
+                            <h4 class="mb-3"><i class="fas fa-phone me-2"></i> Phone</h4>
+                            <p>+254 51 221 7683</p>
+                        </div>
+                        
+                        <div class="contact-info mb-5">
+                            <h4 class="mb-3"><i class="fas fa-envelope me-2"></i> Email</h4>
+                            <p>compsci@egerton.ac.ke</p>
+                        </div>
+                        
+                        <div class="social-section">
+                            <h4 class="mb-3">Follow Us</h4>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="custom-card fade-in">
+                        <div class="card-body p-4">
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <select class="form-select" id="subject">
+                                        <option value="general">General Inquiry</option>
+                                        <option value="admission">Admission Information</option>
+                                        <option value="program">Program Details</option>
+                                        <option value="research">Research Collaboration</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-custom w-100">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flexbox vs Grid Section -->
+    <section id="flexbox" class="flexgrid-hero">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn" style="color: var(--white); border-left: 4px solid var(--light-green); padding-left: 15px;">Flexbox vs CSS Grid</h2>
+            
+            <div class="row g-4 mb-5">
+                <div class="col-lg-6">
+                    <div class="demo-box fade-in">
+                        <i class="fas fa-bars fa-4x mb-4"></i>
+                        <h3 class="mb-3">Flexbox</h3>
+                        <p>One-dimensional layout system for arranging items in rows OR columns. Perfect for component layouts and content alignment.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="demo-box fade-in">
+                        <i class="fas fa-th fa-4x mb-4"></i>
+                        <h3 class="mb-3">CSS Grid</h3>
+                        <p>Two-dimensional layout system for rows AND columns simultaneously. Ideal for complex page layouts and precise item placement.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="custom-card fade-in">
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-3">When to Use Flexbox:</h4>
+                            <ul class="mb-0">
+                                <li>Navigation menus and headers</li>
+                                <li>Button groups and form controls</li>
+                                <li>Card components with flexible content</li>
+                                <li>Vertical centering of elements</li>
+                                <li>Single-direction layouts (row OR column)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="custom-card fade-in">
+                        <div class="card-body p-4">
+                            <h4 class="card-title mb-3">When to Use CSS Grid:</h4>
+                            <ul class="mb-0">
+                                <li>Complete page layouts</li>
+                                <li>Complex dashboards and galleries</li>
+                                <li>Grid-based designs with overlapping elements</li>
+                                <li>Responsive layouts with multiple breakpoints</li>
+                                <li>Two-dimensional layouts (rows AND columns)</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -131,36 +1022,174 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Department of Computer Science</h3>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <h4 class="footer-title">Department of Computer Science</h4>
                     <p>Egerton University is committed to excellence in computer science education, research, and innovation. Our department continues to be a leader in technological education in Kenya and beyond.</p>
                 </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
+                
+                <div class="col-lg-4">
+                    <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="programs.html">Programs</a></li>
-                        <li><a href="staff.html">Faculty</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="facilities.html">Facilities</a></li>
-                        <li><a href="developers.html">Developers</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#staff">Faculty</a></li>
+                        <li><a href="#research">Research</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#developers">Developers</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h3>Contact Information</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Egerton University, Njoro, Kenya</p>
-                    <p><i class="fas fa-phone"></i> +254 51 221 7683</p>
-                    <p><i class="fas fa-envelope"></i> compsci@egerton.ac.ke</p>
+                
+                <div class="col-lg-4">
+                    <h4 class="footer-title">Contact Information</h4>
+                    <div class="mb-3">
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Egerton University, Njoro, Kenya</p>
+                    </div>
+                    <div class="mb-3">
+                        <p><i class="fas fa-phone me-2"></i> +254 51 221 7683</p>
+                    </div>
+                    <div class="mb-4">
+                        <p><i class="fas fa-envelope me-2"></i> compsci@egerton.ac.ke</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="copyright">
+            
+            <div class="text-center pt-4 border-top border-secondary">
                 <p>&copy; 2025 Egerton University - Department of Computer and Applied Computer Science. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom Script -->
+    <script>
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.padding = '0.5rem 0';
+                    navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                } else {
+                    navbar.style.padding = '0.8rem 0';
+                    navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                }
+                
+                // Back to top button
+                const backToTop = document.querySelector('.back-to-top');
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Close mobile navbar if open
+                        const navbarCollapse = document.querySelector('.navbar-collapse');
+                        if (navbarCollapse.classList.contains('show')) {
+                            navbarCollapse.classList.remove('show');
+                        }
+                        
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const subject = document.getElementById('subject').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Simple validation
+                    if (!name || !email || !message) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    // Here you would normally send the form data to a server
+                    // For demo purposes, we'll just show a success message
+                    alert(`Thank you ${name}! Your message has been sent. We will get back to you at ${email} soon.`);
+                    contactForm.reset();
+                });
+            }
+            
+            // Fade-in animation on scroll
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        fadeObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+            
+            // Update copyright year
+            const copyrightElement = document.querySelector('footer .text-center p');
+            if (copyrightElement) {
+                copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2025', new Date().getFullYear());
+            }
+            
+            // Add active class to current nav link
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollY >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
